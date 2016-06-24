@@ -14,23 +14,580 @@
     <!-- endinject -->
 </head>
 <body>
-<!-- the class "content" is used for flexible plugin -->
-<div class="swiper-container content">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide scene">
-            <aside>
-                <h2>aside</h2>
-            </aside>
-            <main>
-                <h3>main</h3>
-            </main>
-        </div>
-        <div class="swiper-slide scene">Slide 2</div>
-        <div class="swiper-slide scene">Slide 3</div>
-    </div>
-</div>
 
-<audio id="audio" src=""></audio>
+<!--<div class="task-window"></div>-->
+
+<!-- home page -->
+<section class="scene scene-home" style="display: block;"></section>
+<!-- end home page -->
+
+<!-- 车型浏览 -->
+<section class="scene scene-carBrowsing" style="display: none;">
+    <div class="car">
+        <div class="hd"></div>
+    </div>
+
+    <div class="pa zhuangshi">
+        <div class="pa circle"></div>
+        <div class="pa line"></div>
+    </div>
+
+    <div class="icon-close"></div>
+
+    <!-- 色彩选择 -->
+    <div class="pa panel">
+        <div class="panel-hd">
+            <img src="assets/images/s-carBrowsing-title.png" alt="" width="118" height="41"/>
+        </div>
+        <div class="panel-bd">
+            <div class="panel-bd-item">
+                <div class="wrap">
+                    <div class="bd">
+                        <div class="item active">
+                            <div class="item-hd"><span>3.0 L Royal Saloon VIP</span><i></i></div>
+                            <div class="item-bd">
+                                <div class="color-item active">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item-hd"><span>3.0 L Royal Saloon VIP</span><i></i></div>
+                            <div class="item-bd">
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item-hd"><span>3.0 L Royal Saloon VIP</span><i></i></div>
+                            <div class="item-bd">
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item-hd"><span>3.0 L Royal Saloon VIP</span><i></i></div>
+                            <div class="item-bd">
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="item-hd"><span>3.0 L Royal Saloon VIP</span><i></i></div>
+                            <div class="item-bd">
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                                <div class="color-item">
+                                    <span class="color-block"></span>
+                                    <span class="txt">宝石珍珠白色</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 色彩选择 -->
+
+    <!-- 车类选择 select -->
+    <div class="pa select car-type-select" data-value="car">
+        <div class="select-hd">
+            <span></span>
+            <i class="icon"></i>
+        </div>
+        <div class="select-bd">
+            <div class="top"></div>
+            <div class="bd">
+                <div class="container">
+
+                </div>
+                <div class="triangle"></div>
+            </div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+    <!-- end 车类选择 select -->
+
+    <!-- 车型选择 tab -->
+    <div class="pa car-model-tab">
+        <div class="item item01 active" data-value="1">
+            <i class="badge">A</i>
+            <i class="triangle"></i>
+            <i class="icon"></i>
+        </div>
+        <div class="item item02" data-value="2">
+            <i class="badge">B</i>
+            <i class="triangle"></i>
+            <i class="icon"></i>
+        </div>
+        <div class="item item03" data-value="3">
+            <i class="badge">C</i>
+            <i class="triangle"></i>
+            <i class="icon"></i>
+        </div>
+    </div>
+    <!-- end 车型选择 tab -->
+</section>
+<!-- end 车型浏览 -->
+
+<section class="scene scene-newQuote" style="display: none;">
+    <div class="newQuote-home" style="display: block;">
+        <div class="pa zhuangshi">
+            <div class="pa circle"></div>
+            <div class="pa line"></div>
+        </div>
+
+        <div class="icon-close"></div>
+
+        <!-- form -->
+        <div class="pa form">
+            <div class="row" style="margin-bottom: 25px;">
+                <img class="tt" src="assets/images/s-newQuote-title01.png" alt="" width="144" height="41"/>
+            </div>
+
+            <div class="row">
+                <!-- 车类选择 select -->
+                <div class="pa select car-type-select" data-value="car">
+                    <div class="select-hd">
+                        <span></span>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="select-bd">
+                        <div class="top"></div>
+                        <div class="bd">
+                            <div class="container">
+
+                            </div>
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+                <!-- end 车类选择 select -->
+
+                <!-- 车型选择 select -->
+                <div class="pa select car-model-select" data-value="">
+                    <div class="select-hd">
+                        <span></span>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="select-bd">
+                        <div class="top"></div>
+                        <div class="bd">
+                            <div class="container">
+
+                            </div>
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+                <!-- end 车型选择 select -->
+            </div>
+
+            <div class="row">
+                <!-- 颜色 select -->
+                <div class="pa select car-color-select" data-value="">
+                    <div class="select-hd">
+                        <span></span>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="select-bd">
+                        <div class="top"></div>
+                        <div class="bd">
+                            <div class="container">
+
+                            </div>
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+                <!-- end 颜色 select -->
+            </div>
+
+            <div class="row">
+                <!-- 内饰 select -->
+                <div class="pa select car-inner-select" data-value="">
+                    <div class="select-hd">
+                        <span></span>
+                        <i class="icon"></i>
+                    </div>
+                    <div class="select-bd">
+                        <div class="top"></div>
+                        <div class="bd">
+                            <div class="container">
+
+                            </div>
+                            <div class="triangle"></div>
+                        </div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+                <!-- end 内饰 select -->
+            </div>
+
+            <div class="row" style="margin-bottom: 25px;">
+                <img class="tt" src="assets/images/s-newQuote-title02.png" alt="" width="118" height="41"/>
+            </div>
+
+            <div class="row">
+                    <span class="radio" data-value="male">
+                        <span class="radio-hd"></span>
+                        <span class="radio-bd"></span>
+                    </span>
+                <span class="radio-label">家庭自用车</span>
+
+                    <span class="radio" data-value="female">
+                        <span class="radio-hd"></span>
+                        <span class="radio-bd"></span>
+                    </span>
+                <span class="radio-label">非营运客车</span>
+
+                    <span class="radio" data-value="female">
+                        <span class="radio-hd"></span>
+                        <span class="radio-bd"></span>
+                    </span>
+                <span class="radio-label">营运客车</span>
+            </div>
+        </div>
+        <!-- end form -->
+
+        <!-- information -->
+        <div class="pa information">
+            <div class="pa main">
+                <div class="bd">
+                    <div class="row">
+                        <div class="title">厂商指导价</div>
+                        <div class="text"><strong>200000.00</strong></div>
+                    </div>
+                    <div class="row">
+                        <div class="title">购车总价</div>
+                        <div class="text">200000.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">车辆成交价</div>
+                        <div class="text">200000.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">必要花费</div>
+                        <div class="text">200000.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">购置税</div>
+                        <div class="text">200000.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">上牌费</div>
+                        <div class="text">34566.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">商业保险<span class="btn btn-baoxian"></span></div>
+                        <div class="text">200000.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">汽车精品<span class="btn btn-jingping"></span></div>
+                        <div class="text">200000.00</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">汽车礼包<span class="btn btn-gift"></span></div>
+                        <div class="text">200000.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side">
+                <div class="calculator">
+                    <img src="assets/images/calculator.png" width="232" height="319" alt=""/>
+                </div>
+            </div>
+            <div class="triangle"></div>
+        </div>
+        <!-- end information -->
+    </div>
+
+    <!--<div class="newQuote-gift"></div>-->
+
+    <div class="newQuote-insurance" style="display: none">
+        <div class="pa zhuangshi">
+            <div class="pa circle"></div>
+            <div class="pa line"></div>
+        </div>
+
+        <div class="icon-close"></div>
+
+        <div class="pa panel">
+            <div class="pa panel-hd">
+                <img src="assets/images/newQuote-insurance-title.png" width="117" height="41" alt=""/>
+            </div>
+            <div class="pa panel-bd">
+                <div class="pa side">
+                    <div class="row">保险合计</div>
+                    <div class="row">基本保险</div>
+                    <div class="row">
+                        <span class="checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                        机动车损失险
+                    </div>
+                    <div class="row">
+                        <span class="checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                        第三者责任险
+                    </div>
+                    <div class="row">
+                        <span class="checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                        机动车盗抢险
+                    </div>
+                    <div class="row">
+                        <span class="checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                        车上人员司机
+                    </div>
+                    <div class="row">
+                        <span class="checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                        发动机特别损失险
+                    </div>
+                    <div class="row">附加险</div>
+                </div>
+
+                <div class="pa main">
+                    <div class="wrap">
+                        <div class="body">
+                            <div class="main-item">
+                                <div class="row">
+                                    <span>中国平安</span>
+                                </div>
+                                <div class="row">2843</div>
+                                <div class="row">1790</div>
+                                <div class="row">2843</div>
+                                <div class="row">
+                                    <div class="select small" data-value="">
+                                        <div class="select-hd">
+                                            <span>20万</span>
+                                            <i class="icon"></i>
+                                        </div>
+                                        <div class="select-bd">
+                                            <div class="top"></div>
+                                            <div class="bd">
+                                                <div class="container">
+                                                    <div class="item">20万</div>
+                                                </div>
+                                                <div class="triangle"></div>
+                                            </div>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">0</div>
+                                <div class="row">
+                                    <div class="select small" data-value="">
+                                        <div class="select-hd">
+                                            <span>20万</span>
+                                            <i class="icon"></i>
+                                        </div>
+                                        <div class="select-bd">
+                                            <div class="top"></div>
+                                            <div class="bd">
+                                                <div class="container">
+                                                    <div class="item">20万</div>
+                                                </div>
+                                                <div class="triangle"></div>
+                                            </div>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">100</div>
+                                <div class="row">785</div>
+                            </div>
+                            <div class="main-item">
+                                <div class="row">
+                                    <span>中国平安</span>
+                                </div>
+                                <div class="row">2843</div>
+                                <div class="row">1790</div>
+                                <div class="row">2843</div>
+                                <div class="row">
+                                    <div class="select small" data-value="">
+                                        <div class="select-hd">
+                                            <span>20万</span>
+                                            <i class="icon"></i>
+                                        </div>
+                                        <div class="select-bd">
+                                            <div class="top"></div>
+                                            <div class="bd">
+                                                <div class="container">
+                                                    <div class="item">20万</div>
+                                                </div>
+                                                <div class="triangle"></div>
+                                            </div>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">0</div>
+                                <div class="row">
+                                    <div class="select small" data-value="">
+                                        <div class="select-hd">
+                                            <span>20万</span>
+                                            <i class="icon"></i>
+                                        </div>
+                                        <div class="select-bd">
+                                            <div class="top"></div>
+                                            <div class="bd">
+                                                <div class="container">
+                                                    <div class="item">20万</div>
+                                                </div>
+                                                <div class="triangle"></div>
+                                            </div>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">100</div>
+                                <div class="row">785</div>
+                            </div>
+                            <div class="main-item">
+                                <div class="row">
+                                    <span>中国平安</span>
+                                </div>
+                                <div class="row">2843</div>
+                                <div class="row">1790</div>
+                                <div class="row">2843</div>
+                                <div class="row">
+                                    <div class="select small" data-value="">
+                                        <div class="select-hd">
+                                            <span>20万</span>
+                                            <i class="icon"></i>
+                                        </div>
+                                        <div class="select-bd">
+                                            <div class="top"></div>
+                                            <div class="bd">
+                                                <div class="container">
+                                                    <div class="item">20万</div>
+                                                </div>
+                                                <div class="triangle"></div>
+                                            </div>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">0</div>
+                                <div class="row">
+                                    <div class="select small" data-value="">
+                                        <div class="select-hd">
+                                            <span>20万</span>
+                                            <i class="icon"></i>
+                                        </div>
+                                        <div class="select-bd">
+                                            <div class="top"></div>
+                                            <div class="bd">
+                                                <div class="container">
+                                                    <div class="item">20万</div>
+                                                </div>
+                                                <div class="triangle"></div>
+                                            </div>
+                                            <div class="bottom"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">100</div>
+                                <div class="row">785</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="pa btn btn01"></button>
+                    <button class="pa btn btn02"></button>
+                    <button class="pa btn btn03"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section class="scene scene04"></section>-->
+<!--<section class="scene scene05"></section>-->
+<!--<section class="scene scene06"></section>-->
+
+<!-- 导航 -->
+<nav class="nav">
+    <span class="item item01"></span>
+    <span class="item item02"></span>
+    <span class="item item03"></span>
+    <span class="item item04"></span>
+    <span class="item item05"></span>
+    <span class="item item06"></span>
+    <span class="active"></span>
+    <span class="text"></span>
+</nav>
+<!-- end 导航 -->
+
+<!-- Logo -->
+<img class="pa logo-common" src="assets/images/s-common-logo.png" alt="" width="89" height="24"/>
+<!-- end Logo -->
+
 <!-- inject:js -->
 <script src="assets/scripts/app.min.js"></script>
 <!-- endinject -->

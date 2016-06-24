@@ -10,6 +10,10 @@
 html {
   height: 100%;
   font-family: "microsoft yahei", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -38,77 +42,191 @@ input {
   position: absolute;
 }
 
-/* psd width `divided` 10 */
-/* 750/10=75 */
-/* the class "content" is used for flexible plugin */
-.content {
-  display: block;
-  min-width: 320px;
-  margin: 0 auto;
-  max-width: 750px;
-}
-
-/* swiper */
-.swiper-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  height: 100%;
-  font-size: 58px;
-  background: #ff9900;
-}
-
-/* scene */
-.scene {
-  -webkit-perspective: 3000;
-          perspective: 3000;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-/* test code */
-.scene {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-.scene aside {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  /* 300px width in psd,
-     750px width total,
-     auto responsive using flexible.js,
-     set total width in $page-base-rem
-  */
-  width: 4rem;
-  background: pink;
-}
-.scene main {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  /* 450px width in psd,
-     750px width total,
-     auto responsive using flexible.js,
-     set total width in $page-base-rem
-  */
-  width: 6rem;
-  background: orange;
+.full-size, .scene {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 /*======================================================================
-      Responsive
+      Common Parts
   ======================================================================*/
+.nav {
+  position: absolute;
+  top: 194px;
+  right: 45px;
+  z-index: 100;
+}
+.nav .item {
+  position: relative;
+  display: block;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 68px;
+  font-size: 0;
+  background: no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 10;
+}
+.nav .item01 {
+  background-image: url("../images/nav01.png");
+}
+.nav .item02 {
+  background-image: url("../images/nav02.png");
+}
+.nav .item03 {
+  background-image: url("../images/nav03.png");
+}
+.nav .item04 {
+  background-image: url("../images/nav04.png");
+}
+.nav .item05 {
+  background-image: url("../images/nav05.png");
+}
+.nav .item06 {
+  background-image: url("../images/nav06.png");
+}
+.nav .active {
+  position: absolute;
+  right: -46px;
+  width: 163px;
+  height: 164px;
+  background: url("../images/nav-active.png") no-repeat;
+  opacity: 0;
+  -webkit-animation: breath 3s infinite ease-in-out;
+          animation: breath 3s infinite ease-in-out;
+}
+.nav .text {
+  position: absolute;
+  right: 54px;
+  width: 154px;
+  height: 20px;
+}
+.nav.nav01 .item01 {
+  background-image: url("../images/nav01-active.png");
+}
+.nav.nav01 .active {
+  top: -48px;
+}
+.nav.nav01 .text {
+  top: 24px;
+  background: url("../images/nav01-txt.png") no-repeat left 0;
+  opacity: 1;
+}
+.nav.nav02 .item02 {
+  background-image: url("../images/nav02-active.png");
+}
+.nav.nav02 .active {
+  top: 88px;
+}
+.nav.nav02 .text {
+  top: 160px;
+  background: url("../images/nav02-txt.png") no-repeat left 0;
+  opacity: 1;
+}
+.nav.nav03 .item03 {
+  background-image: url("../images/nav03-active.png");
+}
+.nav.nav03 .active {
+  top: 224px;
+}
+.nav.nav03 .text {
+  top: 296px;
+  background: url("../images/nav03-txt.png") no-repeat left 0;
+  opacity: 1;
+}
+.nav.nav04 .item04 {
+  background-image: url("../images/nav04-active.png");
+}
+.nav.nav04 .active {
+  top: 360px;
+}
+.nav.nav04 .text {
+  top: 432px;
+  background: url("../images/nav04-txt.png") no-repeat left 0;
+  opacity: 1;
+}
+.nav.nav05 .item05 {
+  background-image: url("../images/nav05-active.png");
+}
+.nav.nav05 .active {
+  top: 496px;
+}
+.nav.nav05 .text {
+  top: 568px;
+  background: url("../images/nav05-txt.png") no-repeat left 0;
+  opacity: 1;
+}
+.nav.nav06 .item06 {
+  background-image: url("../images/nav06-active.png");
+}
+.nav.nav06 .active {
+  top: 632px;
+}
+
+/*======================================================================
+      Scenes
+  ======================================================================*/
+.scene {
+  position: absolute;
+  z-index: 10;
+  background: url("../images/home-bg.jpg") no-repeat;
+  background-size: cover;
+}
+.scene.active {
+  z-index: 20;
+}
+
+.zhuangshi {
+  top: 115px;
+  left: 40px;
+}
+.zhuangshi .circle {
+  top: 25px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  border: 1px solid #fff;
+}
+.zhuangshi .line {
+  top: 0;
+  left: 14px;
+  width: 2px;
+  height: 92px;
+  background: #404057;
+}
+
+.logo-common {
+  position: absolute;
+  left: 55px;
+  top: 45px;
+  z-index: 100;
+}
+
+/*======================================================================
+      Animations
+  ======================================================================*/
+@-webkit-keyframes breath {
+  from {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes breath {
+  from {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

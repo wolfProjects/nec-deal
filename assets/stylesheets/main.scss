@@ -12,6 +12,11 @@
 html {
   height: 100%;
   font-family: "microsoft yahei", Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -38,97 +43,163 @@ input {
 
 .pa { position: absolute; }
 
-/* psd width `divided` 10 */
-$page-base-rem : 75; /* 750/10=75 */
-
-@mixin calWidth ($value) {
-  width: $value*1rem / $page-base-rem;
+.full-size {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-@mixin calHeight ($value) {
-  height: $value*1rem / $page-base-rem;
-}
+//  color
+$orange : #d86f44;
+$darkblue: #516a96;
 
-@mixin calTop ($value) {
-  top: $value*1rem / $page-base-rem;
-}
+//  time
+$globalDelay: .2s;
 
-@mixin calBottom ($value) {
-  bottom: $value*1rem / $page-base-rem;
-}
+/*======================================================================
+      Common Parts
+  ======================================================================*/
+//  nav
+.nav {
+  position: absolute;
+  top: 194px;
+  right: 45px;
+  z-index: 100;
 
-@mixin calLeft ($value) {
-  left: $value*1rem / $page-base-rem;
-}
-
-@mixin calRight ($value) {
-  right: $value*1rem / $page-base-rem;
-}
-
-
-/* the class "content" is used for flexible plugin */
-.content{
-  display: block;
-  min-width: 320px;
-  margin: 0 auto;
-  max-width: 750px;
-}
-
-/* swiper */
-.swiper-container{
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-}
-.swiper-wrapper{
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.swiper-slide{
-  height: 100%;
-  font-size: 58px;
-  background: #ff9900;
-}
-
-/* scene */
-.scene {
-  perspective: 3000;
-  backface-visibility: hidden;
-}
-
-/* test code */
-.scene {
-  display : flex;
-
-  aside {
-    flex: 1 1 auto;
-    /* 300px width in psd,
-       750px width total,
-       auto responsive using flexible.js,
-       set total width in $page-base-rem
-    */
-    @include calWidth(300);
-    background: pink;
+  .item {
+    position: relative;
+    display: block;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 68px;
+    font-size: 0;
+    background: no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 10;
   }
 
-  main {
-    flex: 1 1 auto;
-    /* 450px width in psd,
-       750px width total,
-       auto responsive using flexible.js,
-       set total width in $page-base-rem
-    */
-    @include calWidth(450);
-    background: orange;
+  .item01 { background-image: url("../images/nav01.png"); }
+  .item02 { background-image: url("../images/nav02.png"); }
+  .item03 { background-image: url("../images/nav03.png"); }
+  .item04 { background-image: url("../images/nav04.png"); }
+  .item05 { background-image: url("../images/nav05.png"); }
+  .item06 { background-image: url("../images/nav06.png"); }
+
+  .active {
+    position: absolute;
+    right: (163-71)/2*-1px;
+    width: 163px;
+    height: 164px;
+    background: url("../images/nav-active.png") no-repeat;
+    opacity: 0;
+    animation: breath 3s infinite ease-in-out;
+  }
+
+  .text{
+    position: absolute;
+    right: 54px;
+    width: 154px;
+    height: 20px;
+  }
+
+  &.nav01 {
+    .item01 { background-image: url("../images/nav01-active.png"); }
+    .active { top: ((164-68)/2)*-1px; }
+    .text { top: ((20-68)/2)*-1px;background: url("../images/nav01-txt.png") no-repeat left 0; opacity: 1; }
+  }
+
+  &.nav02 {
+    .item02 { background-image: url("../images/nav02-active.png"); }
+    .active { top: (136-(164-68)/2)*1px; }
+    .text { top: (136-(20-68)/2)*1px; background: url("../images/nav02-txt.png") no-repeat left 0; opacity: 1; }
+  }
+
+  &.nav03 {
+    .item03 { background-image: url("../images/nav03-active.png"); }
+    .active { top: (136*2-(164-68)/2)*1px; }
+    .text { top: (136*2-(20-68)/2)*1px; background: url("../images/nav03-txt.png") no-repeat left 0; opacity: 1; }
+  }
+
+  &.nav04 {
+    .item04 { background-image: url("../images/nav04-active.png"); }
+    .active { top: (136*3-(164-68)/2)*1px; }
+    .text { top: (136*3-(20-68)/2)*1px; background: url("../images/nav04-txt.png") no-repeat left 0; opacity: 1; }
+  }
+
+  &.nav05 {
+    .item05 { background-image: url("../images/nav05-active.png"); }
+    .active { top: (136*4-(164-68)/2)*1px; }
+    .text { top: (136*4-(20-68)/2)*1px; background: url("../images/nav05-txt.png") no-repeat left 0; opacity: 1; }
+  }
+
+  &.nav06 {
+    .item06 { background-image: url("../images/nav06-active.png"); }
+    .active { top: (136*5-(164-68)/2)*1px; }
   }
 }
 
 
 /*======================================================================
-      Responsive
+      Scenes
   ======================================================================*/
-@media screen and (max-width: 1215px) {
+//  scene
+.scene {
+  @extend .full-size;
+  position: absolute;
+  z-index: 10;
+  background: url("../images/home-bg.jpg") no-repeat;
+  background-size: cover;
 
+  &.active {
+    z-index: 20;
+  }
+}
+
+//  左侧标题装饰
+.zhuangshi {
+  top: 115px;
+  left: 40px;
+
+  .circle {
+    top: 25px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+  }
+
+  .line {
+    top: 0;
+    left: 14px;
+    width: 2px;
+    height: 92px;
+    background: #404057;
+  }
+}
+
+//  logo
+.logo-common {
+  position: absolute;
+  left: 55px;
+  top: 45px;
+  z-index: 100;
+}
+
+/*======================================================================
+      Animations
+  ======================================================================*/
+@keyframes breath {
+  from {
+    opacity: 0;
+  }
+
+  40%, 60% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

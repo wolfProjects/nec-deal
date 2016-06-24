@@ -1,0 +1,210 @@
+/*======================================================================
+      Components
+  ======================================================================*/
+.select {
+  position: relative;
+  width: 214px;
+  color: #516a96;
+}
+.select.active {
+  z-index: 1000;
+}
+.select.active .icon {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.select.active .select-bd {
+  display: block;
+  z-index: 1000;
+}
+.select.scroll .bd {
+  padding-bottom: 30px;
+}
+.select.scroll .bd .triangle {
+  display: block;
+}
+
+.select-hd {
+  height: 55px;
+  padding: 0 22px;
+  line-height: 55px;
+  font-size: 18px;
+  background: url("../images/select-hd-bg.png") no-repeat;
+  cursor: pointer;
+}
+.select-hd .icon {
+  position: absolute;
+  right: 19px;
+  top: 24px;
+  width: 17px;
+  height: 10px;
+  background: url("../images/icon-triangle-down.png") no-repeat;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.select.small {
+  width: 135px;
+  text-align: left;
+}
+.select.small .select-hd {
+  height: 35px;
+  padding: 0 10px;
+  line-height: 35px;
+  font-size: 12px;
+  background: url("../images/select-hd-small-bg.png") no-repeat;
+}
+.select.small .select-hd .icon {
+  width: 11px;
+  height: 7px;
+  right: 10px;
+  top: 14px;
+  background: url("../images/icon-triangle-down-small.png") no-repeat;
+}
+.select.small .select-bd {
+  top: 35px;
+}
+.select.small .select-bd .bd {
+  background: url("../images/select-bd-small-bg.png") repeat-y;
+}
+.select.small .select-bd .triangle {
+  width: 11px;
+  height: 7px;
+  left: 60px;
+  background: url("../images/icon-triangle-down-small.png") no-repeat;
+  -webkit-animation: breath 1.2s .2s infinite;
+          animation: breath 1.2s .2s infinite;
+}
+.select.small .select-bd .item {
+  padding: 0 10px;
+  height: 20px;
+  line-height: 20px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.select.small .select-bd .item:hover {
+  background: url("../images/select-bd-selected-small.png") repeat-y center 0;
+}
+.select.small .select-bd .bottom {
+  height: 6px;
+  background: url("../images/select-bd-small-bottom-bg.png") no-repeat;
+}
+
+.select-bd {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55px;
+}
+.select-bd .bd {
+  position: relative;
+  overflow: hidden;
+  padding: 5px 0;
+  background: url("../images/select-bd-bg.png") repeat-y;
+}
+.select-bd .container {
+  width: 150px;
+  padding-right: 20px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.select-bd .triangle {
+  display: none;
+  position: absolute;
+  width: 19px;
+  height: 11px;
+  left: 100px;
+  bottom: 10px;
+  background: url("../images/icon-triangle-down.png") no-repeat;
+  -webkit-animation: breath 1.2s .2s infinite;
+          animation: breath 1.2s .2s infinite;
+}
+.select-bd .item {
+  padding: 0 22px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 3px;
+  cursor: pointer;
+}
+.select-bd .item:hover {
+  background: url("../images/select-bd-selected.png") repeat-y 10px 0;
+}
+.select-bd .bottom {
+  height: 8px;
+  background: url("../images/select-bd-bottom.png") no-repeat;
+}
+
+.radio {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.radio .radio-hd {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  width: 9px;
+  height: 9px;
+  background: url("../images/icon-plus.png") no-repeat;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+.radio .radio-bd {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+}
+.radio.active .radio-hd {
+  -webkit-transform: translate3d(-22px, 0, 0) rotate(180deg);
+          transform: translate3d(-22px, 0, 0) rotate(180deg);
+}
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0;
+  line-height: 25px;
+}
+.checkbox.active .checkbox-hd {
+  opacity: 1;
+}
+
+.checkbox-hd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("../images/checkbox-hd.png") no-repeat 2px 7px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.checkbox-bd {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("../images/checkbox-bd.png") no-repeat;
+  cursor: pointer;
+}
+
+.icon-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 41px;
+  height: 42px;
+  background: url("../images/icon-close-big.png") no-repeat;
+  cursor: pointer;
+}

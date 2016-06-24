@@ -1,0 +1,249 @@
+/*======================================================================
+      Car Browsing
+  ======================================================================*/
+.full-size {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.scene-newQuote {
+  background: url("../images/s-carBrowsing-bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.newQuote-home {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/newQuote-bg.jpg") no-repeat;
+  background-size: cover;
+}
+.newQuote-home .form {
+  color: #516a96;
+  top: 168px;
+  left: 72px;
+}
+.newQuote-home .form .row {
+  margin-bottom: 33px;
+}
+.newQuote-home .form .row * {
+  vertical-align: middle;
+}
+.newQuote-home .form .tt {
+  margin-left: -6px;
+}
+.newQuote-home .form .select {
+  position: relative;
+  display: inline-block;
+  margin-right: 50px;
+}
+.newQuote-home .form .radio {
+  margin-right: 30px;
+}
+.newQuote-home .form .radio-label {
+  margin-right: 35px;
+}
+.newQuote-home .information {
+  top: 191px;
+  left: 650px;
+  width: 1141px;
+  height: 739px;
+  background: url("../images/s-newQuote-information-bg.png") no-repeat;
+}
+.newQuote-home .information .main {
+  left: 118px;
+  top: 92px;
+  width: 545px;
+  height: 510px;
+  overflow: hidden;
+}
+.newQuote-home .information .main .bd {
+  width: 100%;
+  padding: 0 20px 0 0;
+}
+.newQuote-home .information .main .row {
+  position: relative;
+  height: 55px;
+  line-height: 55px;
+  font-size: 20px;
+}
+.newQuote-home .information .main .title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3f4e73;
+}
+.newQuote-home .information .main .text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #657fab;
+}
+.newQuote-home .information .main .text strong {
+  color: #d86f44;
+  font-size: 36px;
+}
+.newQuote-home .information .triangle {
+  position: absolute;
+  top: 642px;
+  left: 377px;
+  width: 19px;
+  height: 11px;
+  background: url("../images/icon-triangle-down.png") no-repeat;
+  -webkit-animation: breath 1s .6s infinite;
+          animation: breath 1s .6s infinite;
+}
+.newQuote-home .information .btn-baoxian, .newQuote-home .information .btn-jingping, .newQuote-home .information .btn-gift {
+  display: inline-block;
+  width: 28px;
+  height: 24px;
+  margin-left: 10px;
+  background: url("../images/icon-conversation.png") no-repeat;
+  position: relative;
+  top: 7px;
+  cursor: pointer;
+}
+.newQuote-home .side {
+  position: absolute;
+  top: 157px;
+  left: 737px;
+}
+
+.newQuote-gift {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/newQuote-bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.newQuote-insurance {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/newQuote-bg.jpg") no-repeat;
+  background-size: cover;
+}
+.newQuote-insurance .panel {
+  top: 170px;
+  left: 74px;
+}
+.newQuote-insurance .panel-hd {
+  position: absolute;
+  top: 0;
+  left: -6px;
+}
+.newQuote-insurance .panel-bd {
+  position: absolute;
+  left: -56px;
+  top: 18px;
+  width: 1813px;
+  height: 760px;
+  background: url("../images/newQuete-insurance-panel-bg.png") no-repeat;
+}
+.newQuote-insurance .side {
+  top: 59px;
+  left: 56px;
+  width: 312px;
+  padding: 88px 0 0 88px;
+}
+.newQuote-insurance .side .row {
+  position: relative;
+  color: #3f4e73;
+  font-size: 20px;
+  line-height: 59px;
+}
+.newQuote-insurance .side .checkbox {
+  position: absolute;
+  top: 17px;
+  left: -40px;
+}
+.newQuote-insurance .main {
+  top: 56px;
+  left: 456px;
+}
+.newQuote-insurance .main .wrap {
+  height: 638px;
+  overflow: hidden;
+}
+.newQuote-insurance .main .main-item {
+  float: left;
+  width: 383px;
+  height: 636px;
+  margin-right: 12px;
+  border: 1px solid transparent;
+  -webkit-transition: border .2s;
+          transition: border .2s;
+}
+.newQuote-insurance .main .main-item.active {
+  border-color: #653b41;
+}
+.newQuote-insurance .main .row {
+  height: 59px;
+  line-height: 59px;
+  color: #657fab;
+  text-align: center;
+}
+.newQuote-insurance .main .row:first-child {
+  padding-top: 24px;
+  padding-bottom: 8px;
+  font-size: 24px;
+  color: #3f4e73;
+}
+.newQuote-insurance .main .select {
+  display: inline-block;
+}
+.newQuote-insurance .btn {
+  top: 670px;
+  width: 228px;
+  height: 63px;
+  background: url("../images/newQuote-insurance-choose-btn.png") no-repeat 6px 6px;
+  border: none;
+  cursor: pointer;
+}
+.newQuote-insurance .btn.active {
+  background: url("../images/newQuote-insurance-choose-btn-active.png") no-repeat;
+}
+.newQuote-insurance .btn01 {
+  left: 81px;
+}
+.newQuote-insurance .btn02 {
+  left: 479px;
+}
+.newQuote-insurance .btn03 {
+  left: 873px;
+}
+
+/*======================================================================
+      Animations
+  ======================================================================*/
+@-webkit-keyframes breath {
+  from {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes breath {
+  from {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

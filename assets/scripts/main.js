@@ -8,44 +8,35 @@ document.addEventListener('touchmove', function (e) {
 },true);
 
 var app = {
-    create: function (){
-        app.mySwiper = new Swiper ('.swiper-container', {
-            direction: 'vertical',
+    scene: $('.scene-home'),
 
-            parallax : true,
+    nav: function () {
+        $('.nav .item').click(function () {
+            var index = $(this).index();
+            $('.nav').removeClass($('.nav').attr('class').replace('nav','')).addClass('nav0' + (index+1));
 
-            noSwiping: false,
-
-            // init
-            onInit: function () {
-            },
-
-            onTransitionStart: function (swiper) {
-            },
-
-            onTransitionEnd: function (swiper) {
-
-            }
+            if ($(this).hasClass('item01')) carBrosing.show();
+            if ($(this).hasClass('item02')) newQuote.show();
         });
-
-        //  first time play BGM
-        var initSound = function () {
-            //  delay play
-            $('#audio')[0].play();
-
-            document.removeEventListener('touchstart', initSound, false);
-        };
-        document.addEventListener('touchstart', initSound, false);
     },
 
-    start: function (){
-        this.create();
+    show: function () {
+        $('.nav').attr('class', 'nav');
+        $('.nav').show();
+        $('.scene-home').show();
+    },
+    
+    init: function () {
+        this.nav();
+        components.init();
+        carBrosing.init();
+        newQuote.init();
     }
 };
 
 $(function (){
     // init app
-    app.start();
+    app.init();
     console.log('app started success...');
 });
 
