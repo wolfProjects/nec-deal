@@ -46,6 +46,9 @@ var concatOrder = {
 
     js: [
         filePath.js + 'jquery-2.1.3.min.js',
+        filePath.js + 'typed.min.js',
+        filePath.js + 'components.js',
+        filePath.js + 'data.js',
         filePath.js + 'main.js'
     ]
 };
@@ -83,8 +86,12 @@ gulp.task('watch', function() {
 
 /**  deploy tasks */
 //  #desc: Deploy project
-gulp.task('deploy', function () {
+gulp.task('foo', function () {
     runSequence('cleanDist', 'sass', 'concatCss', 'scripts', 'copyHtml', 'copyCss', 'copyScripts', 'copyImages', 'injector');
+});
+
+gulp.task('deploy', function () {
+    runSequence('cleanDist', 'sass', 'concatCss', 'scripts', 'copyHtml', 'copyCss', 'copyScripts', 'copyImages');
 });
 
 //  #desc: CleanDist
@@ -100,13 +107,13 @@ gulp.task('copyHtml', function () {
 
 //  #desc: Css -> Dist
 gulp.task('copyCss', function () {
-    return gulp.src([filePath.cssCompiled + '*.css', filePath.cssCompiled + filePath.maps + '*'], { base: filePath.cssCompiled })
+    return gulp.src([filePath.css + '*.css'], { base: filePath.cssCompiled })
         .pipe(gulp.dest(filePath.cssDist));
 });
 
 //  #desc: Js -> Dist
 gulp.task('copyScripts', function () {
-    return gulp.src([filePath.jsCompiled + 'app.js', filePath.jsCompiled + 'app.min.js', filePath.jsCompiled + filePath.maps + '*'], { base: filePath.jsCompiled })
+    return gulp.src([filePath.js + '*.js'], { base: filePath.jsCompiled })
         .pipe(gulp.dest(filePath.jsDist));
 });
 
@@ -114,6 +121,7 @@ gulp.task('copyScripts', function () {
 gulp.task('copyImages', function() {
     return gulp.src(filePath.img + '/**/*')
         .pipe(gulp.dest(filePath.imgDist))
+        .pipe(notify({ message: 'Dist images task complete' }));
 });
 
 //  #desc: Inject css, js
@@ -138,6 +146,7 @@ gulp.task('sass', function () {
     return sass(filePath.css + '**/*.scss', { style: 'expanded' })
         .pipe(autoprefixer())
         .pipe(gulp.dest(filePath.cssCompiled))
+        .pipe(notify({ message: 'Sass compile task complete' }));
 });
 
 //  #desc: Concat(to app.css) -> Minify (to app.min.css)
@@ -150,6 +159,7 @@ gulp.task('concatCss', function () {
         .pipe(rename('app.min.css'))
         .pipe(sourcemaps.write(filePath.maps))
         .pipe(gulp.dest(filePath.cssCompiled))
+        .pipe(notify({ message: 'Css concatenation task complete' }));
 });
 
 // --------------------------------------------------------------------------------------------------- //
@@ -164,6 +174,7 @@ gulp.task('scripts', function() {
         .pipe(uglify('app.min.js'))
         .pipe(sourcemaps.write(filePath.maps))
         .pipe(gulp.dest(filePath.jsCompiled))
+        .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 //  #desc: Jshint -> Report on terminal

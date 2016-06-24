@@ -10,7 +10,11 @@
     <title></title>
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="assets/stylesheets/app.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/components.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/homePage.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/carBrowsing.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/newQuote.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/main.css"/>
     <!-- endinject -->
 </head>
 <body>
@@ -589,7 +593,32 @@
 <!-- end Logo -->
 
 <!-- inject:js -->
-<script src="assets/scripts/app.min.js"></script>
+<!-- page -->
+<script src="assets/scripts/jquery-2.1.3.min.js"></script>
+<script src="assets/scripts/data.js"></script>
+<script src="assets/scripts/components.js"></script>
+<script src="assets/scripts/homepage.js"></script>
+<script src="assets/scripts/carBrowsing.js"></script>
+<script src="assets/scripts/newQuote.js"></script>
+<script src="assets/scripts/main.js"></script>
+
+<script>
+//    $.get('views/task.html', function (a, b, c) {
+//        var taskID = 'view' + (new Date().getTime());
+//        var task = $($(a)[5]);
+//
+//        task.attr('id', taskID);
+//        $('.task-window').append(task);
+//        initTask (task);
+//    });
+//
+//    function initTask (task) {
+//        task.find('h1').click(function () {
+//            console.log($(this).text());
+//        });
+//    }
+</script>
+
 <!-- endinject -->
 </body>
 </html>
