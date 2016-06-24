@@ -119,7 +119,7 @@ $globalDelay: .2s;
       animation: breath 1s .6s infinite;
     }
     
-    .btn-baoxian, .btn-jingping, .btn-gift {
+    .btn {
       display: inline-block;
       width: 28px;
       height: 24px;
@@ -147,9 +147,93 @@ $globalDelay: .2s;
   left: 0;
   background: url("../images/newQuote-bg.jpg") no-repeat;
   background-size: cover;
+
+  .panel {
+    top: 170px;
+    left: 74px;
+  }
+
+  .panel-hd {
+    position: absolute;
+    top: 0;
+    left: -6px;
+  }
+
+  .panel-bd {
+    position: absolute;
+    left: -56px;
+    top: 18px;
+    width: 1718px;
+    height: 701px;
+    padding-top: 59px;
+    padding-left: 58px;
+    background: url("../images/newQuote-gift-panel-bg.png") no-repeat;
+
+    .head {
+      padding: 6px 0 20px (492-210)*1px;
+      line-height: 62px;
+      font-size: 24px;
+      color: #3f4e73;
+      overflow: hidden;
+
+      span {
+        float: left;
+        margin-left: 210px;
+      }
+    }
+
+    .wrap {
+      overflow: hidden;
+    }
+
+    .body {
+      width: 100%;
+      height: 490px;
+      padding: 0 20px 0 0;
+      overflow-y: scroll;
+    }
+
+    .row {
+      height: 56px;
+      line-height: 56px;
+      font-size: 20px;
+      text-align: center;
+      overflow: hidden;
+
+      > * {
+        float: left;
+        width: 258px;
+      }
+    }
+
+    .name {
+      width: 343px;
+      padding-left: 45px;
+      color: #3f4e73;
+      text-align: left;
+    }
+
+    .brand, .parameter, .amount {
+      color: #657fab;
+    }
+
+    .unitPrice, .totalPrice {
+      color: $orange;
+    }
+
+    .triangle {
+      position: absolute;
+      top: (608+56)*1px;
+      left: (872+59)*1px;
+      width: 19px;
+      height: 11px;
+      background: url("../images/icon-triangle-down.png") no-repeat;
+      animation: breath 1s .6s infinite;
+    }
+  }
 }
 
-//  gift page
+//  insurance page
 .newQuote-insurance {
   position: absolute;
   top: 0;

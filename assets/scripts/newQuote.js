@@ -3,6 +3,8 @@
 "use strict";
 
 var newQuote = {
+    scene: $('.scene-newQuote'),
+
     homePage: {
         carSelect: function (scene) {
             resetCarTypeSelect();
@@ -119,6 +121,25 @@ var newQuote = {
         }
     },
 
+    giftPage: {
+        table: function (scene) {
+            scene.find('.panel-bd .body').empty();
+
+            DATA.gifts.forEach(function (item) {
+                var dom = '<p class="row">';
+                dom += '<span class="name">' + (item[0] || '-') + '</span>';
+                dom += '<span class="brand">' + (item[1] || '-') + '</span>';
+                dom += '<span class="parameter">' + (item[2] || '-') + '</span>';
+                dom += '<span class="unitPrice">' + (item[3] || '-') + '</span>';
+                dom += '<span class="amount">' + (item[4] || '-') + '</span>';
+                dom += '<span class="totalPrice">' + (item[5] || '-') + '</span>';
+                dom += '</p>';
+
+                scene.find('.panel-bd .body').append($(dom));
+            });
+        }
+    },
+
     show: function () {
         $('.nav').hide();
         $('.scene-newQuote').show().addClass('active').siblings('.scene').removeClass('active').hide();
@@ -126,24 +147,40 @@ var newQuote = {
 
     init: function (){
         var scene = this.scene;
-        this.homePage.carSelect($('.scene-newQuote .newQuote-home'));
-        this.insurancePage.chooseBtn($('.scene-newQuote .newQuote-insurance'));
-        this.insurancePage.item($('.scene-newQuote .newQuote-insurance'));
+
+        this.homePage.carSelect(scene.find('.newQuote-home'));
+
+        this.insurancePage.chooseBtn(scene.find('.newQuote-insurance'));
+        this.insurancePage.item(scene.find('.newQuote-insurance'));
+
+        this.giftPage.table(scene.find('.newQuote-gift'));
 
         //  close btn
-        $('.scene-newQuote .newQuote-home').find('.icon-close').click(function () {
+        scene.find('.newQuote-home').find('.icon-close').click(function () {
             $('.scene-newQuote').hide().removeClass('active');
             app.show();
         });
 
-        $('.scene-newQuote .newQuote-home .btn').click(function () {
-            $('.scene-newQuote .newQuote-home').hide();
-            $('.scene-newQuote .newQuote-insurance').show();
+        console.log(scene.find('.newQuote-home .btn01'));
+
+        scene.find('.newQuote-home .btn-insurance').click(function () {
+            scene.find('.newQuote-home').hide();
+            scene.find('.newQuote-insurance').show();
+        });
+
+        scene.find('.newQuote-home .btn-classic').click(function () {
+            scene.find('.newQuote-home').hide();
+            scene.find('.newQuote-insurance').show();
+        });
+
+        scene.find('.newQuote-home .btn-gifts').click(function () {
+            scene.find('.newQuote-home').hide();
+            scene.find('.newQuote-gift').show();
         });
         
-        $('.scene-newQuote .newQuote-insurance .icon-close').click(function () {
-            $('.scene-newQuote .newQuote-home').show();
-            $('.scene-newQuote .newQuote-insurance').hide();
+        scene.find('.newQuote-insurance .icon-close, .newQuote-classic .icon-close, .newQuote-gift .icon-close').click(function () {
+            scene.find('.newQuote-home').show();
+            scene.find('.newQuote-insurance, .newQuote-classic, .newQuote-gift').hide();
         });
     }
 };
