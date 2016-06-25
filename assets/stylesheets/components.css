@@ -109,7 +109,7 @@
   background: url("../images/select-bd-bg.png") repeat-y;
 }
 .select-bd .container {
-  width: 150px;
+  width: 214px;
   padding-right: 20px;
   max-height: 200px;
   overflow-y: scroll;
@@ -207,4 +207,36 @@
   height: 42px;
   background: url("../images/icon-close-big.png") no-repeat;
   cursor: pointer;
+}
+
+.input {
+  width: 181px;
+  height: 43px;
+  padding: 10px 22px;
+  line-height: 43px;
+  background: url("../images/select-hd-bg.png") no-repeat 4px 4px;
+  border: none;
+  color: #516a96;
+  font-size: 18px;
+}
+.input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #516a96;
+}
+.input::-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #516a96;
+  opacity: 1;
+}
+.input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #516a96;
+  opacity: 1;
+}
+.input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #516a96;
+}
+.input:focus {
+  background: url("../images/input-bg-active.png") no-repeat center center;
 }

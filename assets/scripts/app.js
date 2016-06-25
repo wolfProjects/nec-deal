@@ -12,7 +12,9 @@ var components = {
         $('body')
             .on('click', '.select-hd', function (e) {
                 e.stopPropagation();
+                $('.select').removeClass('active');
                 $(this).parent('.select').toggleClass('active');
+                $(this).parent('.select').find('.select-bd .container').scrollTop(0);
             })
             .on('click', '.select-bd .item', function (e) {
                 $(this).parents('.select').find('.select-hd span').text($(this).text());
@@ -354,6 +356,45 @@ var DATA = {
         ['侧脚踏板', '', '', '456', 1, '123'],
         ['扰流', '', '', '456', 1, '123'],
         ['发动机下护板', '', '', '456', 1, '123']
+    ],
+
+    //  query Quote
+    quoteList: [
+        {
+            id: '201501013345666',
+            customerName: '李花',
+            phone: '13811939391',
+            salerName: '李浩',
+            carName: ''
+        },
+        {
+            id: '201501013345667',
+            customerName: '王红',
+            phone: '13811939391',
+            salerName: '李浩',
+            carName: ''
+        },
+        {
+            id: '201501013345668',
+            customerName: '凯达',
+            phone: '13811939391',
+            salerName: '李浩',
+            carName: ''
+        },
+        {
+            id: '201501013345669',
+            customerName: 'Kevin',
+            phone: '13811939391',
+            salerName: '李浩',
+            carName: ''
+        },
+        {
+            id: '201501013345670',
+            customerName: '史蒂夫',
+            phone: '13811939391',
+            salerName: '李浩',
+            carName: ''
+        }
     ]
 };
 // Created by sam mok 2015(Siso brand interactive team).
@@ -374,7 +415,13 @@ var app = {
             $('.nav').removeClass($('.nav').attr('class').replace('nav','')).addClass('nav0' + (index+1));
 
             if ($(this).hasClass('item01')) carBrosing.show();
-            if ($(this).hasClass('item02')) newQuote.show();
+            if ($(this).hasClass('item02')) queryQuote.show();
+            if ($(this).hasClass('item03')) newQuote.show();
+            if ($(this).hasClass('item04')) printQuote.show();
+
+            if (index == 5 && confirm('点击后将会重置程序, 如有未保存的报价单信息则会丢失,\n确认重置程序吗?')) {
+                location.reload();
+            }
         });
     },
 
@@ -388,7 +435,9 @@ var app = {
         this.nav();
         components.init();
         carBrosing.init();
+        queryQuote.init();
         newQuote.init();
+        printQuote.init();
     }
 };
 

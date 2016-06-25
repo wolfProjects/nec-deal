@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="assets/stylesheets/components.css"/>
     <link rel="stylesheet" href="assets/stylesheets/homePage.css"/>
     <link rel="stylesheet" href="assets/stylesheets/carBrowsing.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/queryQuote.css"/>
     <link rel="stylesheet" href="assets/stylesheets/newQuote.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/printQuote.css"/>
     <link rel="stylesheet" href="assets/stylesheets/main.css"/>
     <!-- endinject -->
 </head>
@@ -22,7 +24,7 @@
 <!--<div class="task-window"></div>-->
 
 <!-- home page -->
-<section class="scene scene-home" style="display: none;"></section>
+<section class="scene scene-home" style="display: block;"></section>
 <!-- end home page -->
 
 <!-- 车型浏览 -->
@@ -184,8 +186,62 @@
 </section>
 <!-- end 车型浏览 -->
 
-<section class="scene scene-newQuote" style="display: block;">
-    <div class="newQuote-home" style="display: none;">
+<!-- 查询报价单 -->
+<section class="scene scene-queryQuote" style="display: none;">
+    <div class="pa zhuangshi">
+        <div class="pa circle"></div>
+        <div class="pa line"></div>
+    </div>
+
+    <div class="icon-close"></div>
+
+    <div class="pa panel">
+        <div class="pa panel-hd">
+            <img src="assets/images/s-queryQuote-title.png" width="118" height="41" alt=""/>
+        </div>
+        <div class="pa panel-bd">
+            <div class="pa form">
+                <p>
+                    <input type="text" class="input" placeholder="编号"/>
+                    <input type="text" class="input" placeholder="销售顾问"/>
+                </p>
+                <p>
+                    <input type="text" class="input" placeholder="姓名"/>
+                    <input type="text" class="input" placeholder="车型名称"/>
+                </p>
+                <p>
+                    <input type="text" class="input" placeholder="手机号"/>
+                </p>
+
+                <p><button class="btn btn-query"></button></p>
+                <p><button class="btn btn-add"></button></p>
+            </div>
+
+            <div class="pa quote-list">
+                <div class="side">
+                    <p>编号</p>
+                    <p>姓名</p>
+                    <p>电话</p>
+                    <p>销售顾问</p>
+                    <p>车型名称</p>
+                    <p>状态</p>
+                    <p>操作</p>
+                </div>
+                <div class="main">
+                    <div class="scroll-wrap">
+                        <div class="body"></div>
+                    </div>
+                </div>
+                <i class="pa triangle"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end 查询报价单 -->
+
+<!-- 新建报价单 -->
+<section class="scene scene-newQuote" style="display: none;">
+    <div class="newQuote-home" style="display: block;">
         <div class="pa zhuangshi">
             <div class="pa circle"></div>
             <div class="pa line"></div>
@@ -358,38 +414,6 @@
             <div class="triangle"></div>
         </div>
         <!-- end information -->
-    </div>
-
-    <div class="newQuote-gift">
-        <div class="pa zhuangshi">
-            <div class="pa circle"></div>
-            <div class="pa line"></div>
-        </div>
-
-        <div class="icon-close"></div>
-
-        <div class="pa panel">
-            <div class="pa panel-hd">
-                <img src="assets/images/newQuote-gift-title.png" width="117" height="41" alt=""/>
-            </div>
-            <div class="pa panel-bd">
-                <div class="head">
-                    <span>品牌</span>
-                    <span>参数</span>
-                    <span>单价</span>
-                    <span>数量</span>
-                    <span>金额</span>
-                </div>
-                <div class="wrap">
-                    <div class="body">
-                        <p class="row">
-
-                        </p>
-                    </div>
-                </div>
-                <i class="triangle"></i>
-            </div>
-        </div>
     </div>
 
     <div class="newQuote-insurance" style="display: none">
@@ -600,10 +624,376 @@
             </div>
         </div>
     </div>
+
+    <div class="newQuote-gift" style="display: none;">
+        <div class="pa zhuangshi">
+            <div class="pa circle"></div>
+            <div class="pa line"></div>
+        </div>
+
+        <div class="icon-close"></div>
+
+        <div class="pa panel">
+            <div class="pa panel-hd">
+                <img src="assets/images/newQuote-gift-title.png" width="117" height="41" alt=""/>
+            </div>
+            <div class="pa panel-bd">
+            </div>
+        </div>
+    </div>
+
+    <div class="newQuote-classic" style="display: none;">
+        <div class="pa zhuangshi">
+            <div class="pa circle"></div>
+            <div class="pa line"></div>
+        </div>
+
+        <div class="icon-close"></div>
+
+        <div class="pa panel">
+            <div class="pa panel-hd">
+                <img src="assets/images/newQuote-gift-title.png" width="117" height="41" alt=""/>
+            </div>
+            <div class="pa panel-bd">
+                <div class="panel-bd-item">
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-a-item01.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">盘装甲</span>
+                            <span class="pa price">980</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-a-item02.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">盘装甲</span>
+                            <span class="pa price">880</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-a-item03.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">盘装甲</span>
+                            <span class="pa price">1080</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-a-item04.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">车衣</span>
+                            <span class="pa price">260</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-a-item05.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">车牌架</span>
+                            <span class="pa price">400</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-a-item06.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">关窗器</span>
+                            <span class="pa price">290</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-bd-item" style="display: none;">
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-b-item01.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">真皮坐套</span>
+                            <span class="pa price">5000</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-b-item02.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">车载空气净化器</span>
+                            <span class="pa price">880</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-b-item03.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">车载冰箱</span>
+                            <span class="pa price">660</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-b-item04.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">儿童座椅</span>
+                            <span class="pa price">580</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-b-item05.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">贴膜</span>
+                            <span class="pa price">990</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-b-item06.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">防滑垫</span>
+                            <span class="pa price">880</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-bd-item" style="display: none;">
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-c-item01.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">车载中控</span>
+                            <span class="pa price">5000</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-c-item02.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">电子狗</span>
+                            <span class="pa price">880</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-c-item03.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">行车记录仪</span>
+                            <span class="pa price">660</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-c-item04.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">后排影音娱乐系统</span>
+                            <span class="pa price">580</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-c-item05.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">低音炮音响</span>
+                            <span class="pa price">990</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="assets/images/newQuote-tab-c-item06.png" alt="" width="442" height="327"/>
+                        <div class="pa title">
+                        <span class="pa checkbox active">
+                            <span class="checkbox-hd"></span>
+                            <span class="checkbox-bd"></span>
+                        </span>
+                            <span class="pa name">防盗追踪器</span>
+                            <span class="pa price">880</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 精品选择 tab -->
+        <div class="pa car-classic-tab">
+            <div class="item item01 active" data-value="1">
+                <i class="badge">A</i>
+                <i class="triangle"></i>
+                <i class="icon"></i>
+            </div>
+            <div class="item item02" data-value="2">
+                <i class="badge">B</i>
+                <i class="triangle"></i>
+                <i class="icon"></i>
+            </div>
+            <div class="item item03" data-value="3">
+                <i class="badge">C</i>
+                <i class="triangle"></i>
+                <i class="icon"></i>
+            </div>
+        </div>
+        <!-- end 精品选择 tab -->
+    </div>
+
 </section>
-<!--<section class="scene scene04"></section>-->
-<!--<section class="scene scene05"></section>-->
-<!--<section class="scene scene06"></section>-->
+<!-- end 新建报价单 -->
+
+<section class="scene scene-printQuote" style="display: none;">
+    <div class="pa zhuangshi">
+        <div class="pa circle"></div>
+        <div class="pa line"></div>
+    </div>
+
+    <div class="icon-close"></div>
+
+    <div class="pa side">
+        <div class="title">
+            <img src="assets/images/s-printQuote-title01.png" width="274" height="41" alt=""/>
+        </div>
+        <p><span class="number">1. </span>个人贷款申请表原件；</p>
+        <p><span class="number">2. </span>身份证，户口本（首页，户主页及申请人页）原件及复印件（如有配偶或担保人，请一并提供）；</p>
+        <p><span class="number">3. </span>借款人（或配偶、直系亲属）的驾驶证原件或复印件；</p>
+        <p><span class="number">4. </span>结婚证：结婚证书原件及复印件或离婚证原件及复印件（民政局开具的同等效力的婚姻证明）；</p>
+        <p><span class="number">5. </span>居住证明：房产证原件及复印件（购房合同、宅基地证等）；</p>
+        <p><span class="number">6. </span>近6个月还款对账单（适用于房贷、车贷、信用卡或其他）；</p>
+        <p><span class="number">7. </span>收入证明：如借款人为全职职工需提供收入证明原件（金融公司统一格式）及工资卡账户记录；</p>
+        <p><span class="number">8. </span>稳定收入证明：如果借款人为私营业主提供营业执照及近4个月税单复印件；</p>
+        <p><span class="number">9. </span>借款人工商银行账户。</p>
+        <button class="pa btn"></button>
+    </div>
+    <div class="pa main">
+        <div class="title">
+            <img src="assets/images/s-printQuote-title02.png" width="144" height="41" alt=""/>
+        </div>
+        <div class="pa body">
+            <table class="table" border="none">
+                <tr>
+                    <td class="tt" width="125">选购车型</td>
+                    <td colspan="5">
+                        <span class="carName">NEC 劲享运动型</span>
+                        <span class="tt priceTitle">销售价格</span>
+                        <span class="price">￥<span>1000000</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tt">颜色</td>
+                    <td colspan="5">
+                        <span class="color">灰色</span>
+                        <span class="tt amountTitle">台数</span>
+                        <span class="amount">1</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tt">税费说明</td>
+                    <td colspan="5">必购险种（车损险、第三者责任险&lt;不能低于20万）&gt;、盗抢险、不计免赔）</td>
+                </tr>
+                <tr>
+                    <td class="tt" rowspan="5">购置税费</td>
+                    <td width="180">车船使用税</td>
+                    <td width="125" class="gouzhi-chechuanPrice">10000</td>
+                    <td class="tt" rowspan="5" width="170">按揭费用</td>
+                    <td width="165">手续费</td>
+                    <td width="154" class="anjie-shouxuPrice">1000</td>
+                </tr>
+                <tr>
+                    <td>上牌费</td>
+                    <td class="gouzhi-shangpaiPrice">10000</td>
+                    <td>其他费用</td>
+                    <td class="anjie-anotherPrice">10000</td>
+                </tr>
+                <tr>
+                    <td>交强险</td>
+                    <td class="gouzhi-jiaoqiangPrice">10000</td>
+                    <td>按揭费用合计</td>
+                    <td class="anjie-totalPrice">10000</td>
+                </tr>
+                <tr>
+                    <td>其他</td>
+                    <td class="gouzhi-anotherPrice">11111</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>购置附加费用合</td>
+                    <td>1000</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="tt insuranceName" rowspan="3">中国平安</td>
+                    <td class="insurance-description">必购险种（车损险、第三者责任险&lt;不能低于20万）&gt;、盗抢险、不计免赔）</td>
+                    <td>&nbsp;</td>
+                    <td class="tt" rowspan="2">精品及选装件</td>
+                    <td>选购明细（商品名/价格）</td>
+                    <td class="classic-details">
+                        经销商精品/￥ 0.00<br/>汽车礼包/￥0.00
+                    </td>
+                </tr>
+                <tr>
+                    <td>其余保险费用</td>
+                    <td>&nbsp;</td>
+                    <td>精品选装件合计</td>
+                    <td class="classic-totalPrice">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>保险费用合计</td>
+                    <td>&nbsp;</td>
+                    <td class="tt">其他</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
 
 <!-- 导航 -->
 <nav class="nav">
@@ -629,7 +1019,9 @@
 <script src="assets/scripts/components.js"></script>
 <script src="assets/scripts/homepage.js"></script>
 <script src="assets/scripts/carBrowsing.js"></script>
+<script src="assets/scripts/queryQuote.js"></script>
 <script src="assets/scripts/newQuote.js"></script>
+<script src="assets/scripts/printQuote.js"></script>
 <script src="assets/scripts/main.js"></script>
 
 <script>

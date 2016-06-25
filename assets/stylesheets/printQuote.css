@@ -1,0 +1,123 @@
+/*======================================================================
+      Print Quote
+  ======================================================================*/
+.full-size {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.scene-printQuote {
+  background: url("../images/newQuote-bg.jpg") no-repeat !important;
+  background-size: cover;
+}
+.scene-printQuote .side {
+  top: 170px;
+  left: 74px;
+  width: 530px;
+  line-height: 2.1em;
+  color: #6e6e85;
+  font-size: 16px;
+}
+.scene-printQuote .side .title {
+  margin-left: -6px;
+  margin-bottom: 20px;
+}
+.scene-printQuote .side p {
+  padding: 0 0 0 20px;
+}
+.scene-printQuote .side p span {
+  margin-left: -16px;
+}
+.scene-printQuote .side .btn {
+  top: 600px;
+  left: 135px;
+  width: 228px;
+  height: 63px;
+  background: url("../images/s-printQuote-btn.png") no-repeat 6px 6px;
+  border: none;
+}
+.scene-printQuote .side .btn:active {
+  background: url("../images/s-printQuote-btn-active.png") no-repeat;
+}
+.scene-printQuote .main {
+  top: 170px;
+  left: 755px;
+}
+.scene-printQuote .main .title {
+  margin-left: -6px;
+  margin-bottom: 20px;
+}
+.scene-printQuote .main .body {
+  top: 20px;
+  left: -56px;
+  width: 1095px;
+  height: 760px;
+  background: url("../images/s-printQuote-panel-bg.png");
+}
+.scene-printQuote .main .table {
+  position: absolute;
+  top: 98px;
+  left: 115px;
+  width: 896px;
+  height: 502px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 18px;
+}
+.scene-printQuote .main .table, .scene-printQuote .main .table th, .scene-printQuote .main .table td {
+  border: 1px solid #666696;
+  color: #657fab;
+  padding: 0 15px;
+}
+.scene-printQuote .main .table .tt {
+  color: #3f4e73;
+  font-size: 20px;
+}
+.scene-printQuote .main .table .carName, .scene-printQuote .main .table .color {
+  display: inline-block;
+  width: 280px;
+  text-align: center;
+  color: #d86f44;
+}
+.scene-printQuote .main .table .priceTitle, .scene-printQuote .main .table .amountTitle {
+  display: inline-block;
+  width: 136px;
+  padding-left: 24px;
+}
+.scene-printQuote .main .table .price, .scene-printQuote .main .table .amount {
+  display: inline-block;
+  width: 275px;
+  text-align: center;
+  color: #d86f44;
+}
+.scene-printQuote .main .table .color, .scene-printQuote .main .table .amount {
+  color: #657fab;
+}
+
+/*======================================================================
+      Animations
+  ======================================================================*/
+@-webkit-keyframes breath {
+  from {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes breath {
+  from {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

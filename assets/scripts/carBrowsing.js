@@ -57,6 +57,104 @@ var carBrosing = {
         });
     },
 
+    animationBg: {
+        preloadSprites: [],
+
+        mainSprites: [],
+
+        preload: function (cb) {
+            var that = this;
+            var img = null;
+            var total = 35 + 250;
+            var count = 0;
+
+            for (var i = 0; i <= 34; i++) {
+                img = new Image();
+                img.index = i;
+                img.onload = function () {
+                    that.preloadSprites[this.index] = this;
+                    count += 1;
+                    checkLoading();
+                };
+                img.onerror = function () {
+                    total -= 1;
+                    checkLoading();
+                };
+                img.src = './assets/images/animation/car-comparison-loading-' + fixedIndex(i) + '.png';
+            }
+
+            for (i = 0; i <= 249; i++) {
+                img = new Image();
+                img.index = i;
+                img.onload = function () {
+                    that.mainSprites[this.index] = this;
+                    count += 1;
+                    checkLoading();
+                };
+                img.onerror = function () {
+                    total -= 1;
+                    checkLoading();
+                };
+                img.src = './assets/images/animation/car-comparison-animation-' + fixedIndex(i) + '.png';
+            }
+
+            function checkLoading () {
+                if (count == total && cb) cb();
+            }
+
+            function fixedIndex (i) {
+                if (i < 10) return '000' + i;
+                if (i < 100) return '00' + i;
+                if (i < 1000) return '0' + i;
+            }
+        },
+
+        timer: null,
+
+        play: function () {
+            var that = this;
+            var canvas = $('.animation-bg')[0];
+            var ctx = canvas.getContext('2d');
+            var curIndex = 0;
+
+            clearInterval(that.timer);
+
+            requestAnimationFrame(function () {
+                that.timer = setInterval(function () {
+                    ctx.clearRect(0, 0, 1280, 720);
+                    ctx.drawImage(that.preloadSprites[curIndex], 0, 0, 1280, 720);
+                    curIndex += 1;
+
+                    if (curIndex > that.preloadSprites.length - 1) {
+                        clearInterval(that.timer);
+                        curIndex = 0;
+                        playMainAnimation();
+                    }
+                }, 1000/25);
+            });
+
+            function playMainAnimation () {
+                play();
+                that.timer = setInterval(play, 1000/25);
+
+                function play () {
+                    ctx.clearRect(0, 0, 1280, 720);
+                    ctx.drawImage(that.mainSprites[curIndex], 0, 0, 1280, 720);
+                    curIndex += 1;
+
+                    if (curIndex > that.mainSprites.length - 1) {
+                        curIndex = 0;
+                        ctx.drawImage(that.preloadSprites[curIndex], 0, 0, 1280, 720);
+                    }
+                }
+            }
+        },
+
+        pause: function () {
+            clearInterval(this.timer);
+        }
+    },
+
     colorSelect: function () {
         var panel = carBrosing.scene.find('.panel');
         panel.find('.item-hd').click(function () {
@@ -72,6 +170,7 @@ var carBrosing = {
     show: function () {
         $('.nav').hide();
         $('.scene-carBrowsing').show().addClass('active').siblings('.scene').removeClass('active').hide();
+        this.animationBg.play();
     },
 
     init: function (){

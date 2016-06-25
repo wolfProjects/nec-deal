@@ -140,8 +140,16 @@ var newQuote = {
         }
     },
 
+    classic: {
+        tab: function (scene) {
+            scene.find('.car-classic-tab .item').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                scene.find('.panel-bd-item').eq($(this).index()).fadeIn('fast').siblings().hide();
+            });
+        }
+    },
+
     show: function () {
-        $('.nav').hide();
         $('.scene-newQuote').show().addClass('active').siblings('.scene').removeClass('active').hide();
     },
 
@@ -155,13 +163,13 @@ var newQuote = {
 
         this.giftPage.table(scene.find('.newQuote-gift'));
 
+        this.classic.tab(scene.find('.newQuote-classic'));
+
         //  close btn
         scene.find('.newQuote-home').find('.icon-close').click(function () {
             $('.scene-newQuote').hide().removeClass('active');
             app.show();
         });
-
-        console.log(scene.find('.newQuote-home .btn01'));
 
         scene.find('.newQuote-home .btn-insurance').click(function () {
             scene.find('.newQuote-home').hide();

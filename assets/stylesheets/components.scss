@@ -131,7 +131,7 @@ $globalDelay: .2s;
   }
 
   .container {
-    width: 150px;
+    width: 214px;
     padding-right: 20px;
     max-height: 200px;
     overflow-y: scroll;
@@ -242,4 +242,35 @@ $globalDelay: .2s;
   height: 42px;
   background: url("../images/icon-close-big.png") no-repeat;
   cursor: pointer;
+}
+
+// input
+.input {
+  width: 181px;
+  height: 43px;
+  padding: 10px 22px;
+  line-height: 43px;
+  background: url("../images/select-hd-bg.png") no-repeat 4px 4px;
+  border: none;
+  color: $darkblue;
+  font-size: 18px;
+
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $darkblue;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    $darkblue;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    $darkblue;
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    $darkblue;
+  }
+
+  &:focus {
+    background: url('../images/input-bg-active.png') no-repeat center center;
+  }
 }

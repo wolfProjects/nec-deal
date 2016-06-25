@@ -16,7 +16,13 @@ var app = {
             $('.nav').removeClass($('.nav').attr('class').replace('nav','')).addClass('nav0' + (index+1));
 
             if ($(this).hasClass('item01')) carBrosing.show();
-            if ($(this).hasClass('item02')) newQuote.show();
+            if ($(this).hasClass('item02')) queryQuote.show();
+            if ($(this).hasClass('item03')) newQuote.show();
+            if ($(this).hasClass('item04')) printQuote.show();
+
+            if (index == 5 && confirm('点击后将会重置程序, 如有未保存的报价单信息则会丢失,\n确认重置程序吗?')) {
+                location.reload();
+            }
         });
     },
 
@@ -30,7 +36,9 @@ var app = {
         this.nav();
         components.init();
         carBrosing.init();
+        queryQuote.init();
         newQuote.init();
+        printQuote.init();
     }
 };
 

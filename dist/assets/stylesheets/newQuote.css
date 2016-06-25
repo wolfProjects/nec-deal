@@ -1,5 +1,5 @@
 /*======================================================================
-      Car Browsing
+      New Quote
   ======================================================================*/
 .full-size {
   top: 0;
@@ -292,6 +292,144 @@
 }
 .newQuote-insurance .btn03 {
   left: 873px;
+}
+
+.newQuote-classic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/newQuote-bg.jpg") no-repeat;
+  background-size: cover;
+}
+.newQuote-classic .panel {
+  top: 170px;
+  left: 74px;
+}
+.newQuote-classic .panel-hd {
+  position: absolute;
+  top: 0;
+  left: -6px;
+}
+.newQuote-classic .panel-bd {
+  position: absolute;
+  top: 48px;
+  left: 160px;
+  width: 1326px;
+}
+.newQuote-classic .panel-bd .item {
+  float: left;
+  width: 442px;
+  height: 328px;
+  position: relative;
+}
+.newQuote-classic .panel-bd .title {
+  width: 362px;
+  height: 65px;
+  left: 40px;
+  bottom: 19px;
+  background: url("../images/newQuote-tab-item-hd-bg.png") no-repeat;
+}
+.newQuote-classic .panel-bd .checkbox {
+  top: 19px;
+  left: 26px;
+}
+.newQuote-classic .panel-bd .name {
+  left: 65px;
+  height: 65px;
+  line-height: 65px;
+  color: #6c7eba;
+  font-size: 20px;
+}
+.newQuote-classic .panel-bd .price {
+  right: 18px;
+  height: 65px;
+  line-height: 65px;
+  font-size: 30px;
+  color: #d86f44;
+}
+.newQuote-classic .car-classic-tab {
+  top: 264px;
+  left: 1720px;
+  padding-top: 15px;
+  -webkit-transition: all 1.2s 0.2s;
+          transition: all 1.2s 0.2s;
+  -webkit-transform: translate3d(20px, 0, 0);
+          transform: translate3d(20px, 0, 0);
+  z-index: 20;
+}
+.newQuote-classic .car-classic-tab .item {
+  width: 142px;
+  height: 133px;
+  margin-top: -15px;
+  background: url("../images/car-model-select.png") no-repeat 4px 4px;
+  cursor: pointer;
+  position: relative;
+}
+.newQuote-classic .car-classic-tab .item .badge {
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-style: normal;
+  background: #d86f44;
+  opacity: 0;
+}
+.newQuote-classic .car-classic-tab .item .triangle {
+  opacity: 0;
+  position: absolute;
+  width: 15px;
+  height: 26px;
+  left: -40px;
+  top: 60px;
+  background: url("../images/icon-triangle-left.png") no-repeat;
+}
+.newQuote-classic .car-classic-tab .item .icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+.newQuote-classic .car-classic-tab .item.active {
+  background: url("../images/car-model-select-active.png") no-repeat;
+  z-index: 10;
+}
+.newQuote-classic .car-classic-tab .item.active .badge {
+  opacity: 1;
+}
+.newQuote-classic .car-classic-tab .item.active .triangle {
+  opacity: 1;
+  -webkit-animation: left 1.2s 0.2s infinite linear forwards;
+          animation: left 1.2s 0.2s infinite linear forwards;
+}
+.newQuote-classic .car-classic-tab .item01 .icon {
+  background: url("../images/newQuote-classic-tab-item01.png") no-repeat center center;
+}
+.newQuote-classic .car-classic-tab .item01.active .icon {
+  background: url("../images/newQuote-classic-tab-item01-active.png") no-repeat center center;
+}
+.newQuote-classic .car-classic-tab .item02 .icon {
+  background: url("../images/newQuote-classic-tab-item02.png") no-repeat center center;
+}
+.newQuote-classic .car-classic-tab .item02.active .icon {
+  background: url("../images/newQuote-classic-tab-item02-active.png") no-repeat center center;
+}
+.newQuote-classic .car-classic-tab .item03 .icon {
+  background: url("../images/newQuote-classic-tab-item03.png") no-repeat center center;
+}
+.newQuote-classic .car-classic-tab .item03.active .icon {
+  background: url("../images/newQuote-classic-tab-item03-active.png") no-repeat center center;
+}
+.newQuote-classic .car-classic-tab.active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  opacity: 1;
 }
 
 /*======================================================================
