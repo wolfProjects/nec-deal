@@ -15,10 +15,11 @@
 
 .newQuote-home {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 124px;
+  left: 320px;
+  z-index: 20;
+  width: 1920px;
+  height: 1080px;
   background: url("../images/newQuote-bg.jpg") no-repeat;
   background-size: cover;
 }
@@ -115,10 +116,10 @@
 
 .newQuote-gift {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 138px;
+  left: 943px;
+  width: 1920px;
+  height: 1080px;
   background: url("../images/newQuote-bg.jpg") no-repeat;
   background-size: cover;
 }
@@ -132,6 +133,7 @@
   left: -6px;
 }
 .newQuote-gift .panel-bd {
+  overflow: hidden;
   position: absolute;
   left: -56px;
   top: 18px;
@@ -197,10 +199,10 @@
 
 .newQuote-insurance {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 410px;
+  left: 943px;
+  width: 1920px;
+  height: 1080px;
   background: url("../images/newQuote-bg.jpg") no-repeat;
   background-size: cover;
 }
@@ -243,7 +245,16 @@
   left: 456px;
 }
 .newQuote-insurance .main .wrap {
+  width: 1150px;
   height: 638px;
+  overflow: hidden;
+}
+.newQuote-insurance .main .body {
+  height: 658px;
+  overflow-x: scroll;
+}
+.newQuote-insurance .main .item-wrap {
+  width: 2000%;
   overflow: hidden;
 }
 .newQuote-insurance .main .main-item {
@@ -296,10 +307,10 @@
 
 .newQuote-classic {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 682px;
+  left: 943px;
+  width: 1920px;
+  height: 1080px;
   background: url("../images/newQuote-bg.jpg") no-repeat;
   background-size: cover;
 }
@@ -430,6 +441,30 @@
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   opacity: 1;
+}
+
+.newQuote-home {
+  -webkit-transform: scale(0.3);
+      -ms-transform: scale(0.3);
+          transform: scale(0.3);
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
+}
+
+.newQuote-gift,
+.newQuote-insurance,
+.newQuote-classic {
+  -webkit-transform: scale(0.239);
+      -ms-transform: scale(0.239);
+          transform: scale(0.239);
+  -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+          transform-origin: left top;
+}
+
+.topFloor {
+  z-index: 30;
 }
 
 /*======================================================================

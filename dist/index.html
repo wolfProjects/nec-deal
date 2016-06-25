@@ -29,6 +29,8 @@
 
 <!-- 车型浏览 -->
 <section class="scene scene-carBrowsing" style="display: none;">
+    <canvas class="animation-bg" width="1280" height="720"></canvas>
+
     <div class="car">
         <div class="hd"></div>
     </div>
@@ -416,7 +418,7 @@
         <!-- end information -->
     </div>
 
-    <div class="newQuote-insurance" style="display: none">
+    <div class="newQuote-insurance" style="display: block">
         <div class="pa zhuangshi">
             <div class="pa circle"></div>
             <div class="pa line"></div>
@@ -473,146 +475,336 @@
                 <div class="pa main">
                     <div class="wrap">
                         <div class="body">
-                            <div class="main-item">
-                                <div class="row">
-                                    <span>中国平安</span>
-                                </div>
-                                <div class="row">2843</div>
-                                <div class="row">1790</div>
-                                <div class="row">2843</div>
-                                <div class="row">
-                                    <div class="select small" data-value="">
-                                        <div class="select-hd">
-                                            <span>20万</span>
-                                            <i class="icon"></i>
-                                        </div>
-                                        <div class="select-bd">
-                                            <div class="top"></div>
-                                            <div class="bd">
-                                                <div class="container">
-                                                    <div class="item">20万</div>
-                                                </div>
-                                                <div class="triangle"></div>
+                            <div class="item-wrap">
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
                                             </div>
-                                            <div class="bottom"></div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">0</div>
-                                <div class="row">
-                                    <div class="select small" data-value="">
-                                        <div class="select-hd">
-                                            <span>20万</span>
-                                            <i class="icon"></i>
-                                        </div>
-                                        <div class="select-bd">
-                                            <div class="top"></div>
-                                            <div class="bd">
-                                                <div class="container">
-                                                    <div class="item">20万</div>
-                                                </div>
-                                                <div class="triangle"></div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
                                             </div>
-                                            <div class="bottom"></div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
                                 </div>
-                                <div class="row">100</div>
-                                <div class="row">785</div>
-                            </div>
-                            <div class="main-item">
-                                <div class="row">
-                                    <span>中国平安</span>
-                                </div>
-                                <div class="row">2843</div>
-                                <div class="row">1790</div>
-                                <div class="row">2843</div>
-                                <div class="row">
-                                    <div class="select small" data-value="">
-                                        <div class="select-hd">
-                                            <span>20万</span>
-                                            <i class="icon"></i>
-                                        </div>
-                                        <div class="select-bd">
-                                            <div class="top"></div>
-                                            <div class="bd">
-                                                <div class="container">
-                                                    <div class="item">20万</div>
-                                                </div>
-                                                <div class="triangle"></div>
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
                                             </div>
-                                            <div class="bottom"></div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">0</div>
-                                <div class="row">
-                                    <div class="select small" data-value="">
-                                        <div class="select-hd">
-                                            <span>20万</span>
-                                            <i class="icon"></i>
-                                        </div>
-                                        <div class="select-bd">
-                                            <div class="top"></div>
-                                            <div class="bd">
-                                                <div class="container">
-                                                    <div class="item">20万</div>
-                                                </div>
-                                                <div class="triangle"></div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
                                             </div>
-                                            <div class="bottom"></div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
                                 </div>
-                                <div class="row">100</div>
-                                <div class="row">785</div>
-                            </div>
-                            <div class="main-item">
-                                <div class="row">
-                                    <span>中国平安</span>
-                                </div>
-                                <div class="row">2843</div>
-                                <div class="row">1790</div>
-                                <div class="row">2843</div>
-                                <div class="row">
-                                    <div class="select small" data-value="">
-                                        <div class="select-hd">
-                                            <span>20万</span>
-                                            <i class="icon"></i>
-                                        </div>
-                                        <div class="select-bd">
-                                            <div class="top"></div>
-                                            <div class="bd">
-                                                <div class="container">
-                                                    <div class="item">20万</div>
-                                                </div>
-                                                <div class="triangle"></div>
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
                                             </div>
-                                            <div class="bottom"></div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">0</div>
-                                <div class="row">
-                                    <div class="select small" data-value="">
-                                        <div class="select-hd">
-                                            <span>20万</span>
-                                            <i class="icon"></i>
-                                        </div>
-                                        <div class="select-bd">
-                                            <div class="top"></div>
-                                            <div class="bd">
-                                                <div class="container">
-                                                    <div class="item">20万</div>
-                                                </div>
-                                                <div class="triangle"></div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
                                             </div>
-                                            <div class="bottom"></div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
                                 </div>
-                                <div class="row">100</div>
-                                <div class="row">785</div>
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
+                                </div>
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
+                                </div>
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
+                                </div>
+                                <div class="main-item">
+                                    <div class="row">
+                                        <span>中国平安</span>
+                                    </div>
+                                    <div class="row">2843</div>
+                                    <div class="row">1790</div>
+                                    <div class="row">2843</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">0</div>
+                                    <div class="row">
+                                        <div class="select small" data-value="">
+                                            <div class="select-hd">
+                                                <span>20万</span>
+                                                <i class="icon"></i>
+                                            </div>
+                                            <div class="select-bd">
+                                                <div class="top"></div>
+                                                <div class="bd">
+                                                    <div class="container">
+                                                        <div class="item">20万</div>
+                                                    </div>
+                                                    <div class="triangle"></div>
+                                                </div>
+                                                <div class="bottom"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">100</div>
+                                    <div class="row">785</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -625,7 +817,7 @@
         </div>
     </div>
 
-    <div class="newQuote-gift" style="display: none;">
+    <div class="newQuote-gift" style="display: block;">
         <div class="pa zhuangshi">
             <div class="pa circle"></div>
             <div class="pa line"></div>
@@ -638,11 +830,12 @@
                 <img src="assets/images/newQuote-gift-title.png" width="117" height="41" alt=""/>
             </div>
             <div class="pa panel-bd">
+                <div class="body"></div>
             </div>
         </div>
     </div>
 
-    <div class="newQuote-classic" style="display: none;">
+    <div class="newQuote-classic" style="display: block;">
         <div class="pa zhuangshi">
             <div class="pa circle"></div>
             <div class="pa line"></div>
@@ -996,7 +1189,7 @@
 </section>
 
 <!-- 导航 -->
-<nav class="nav">
+<nav class="nav" style="display: none;">
     <span class="item item01"></span>
     <span class="item item02"></span>
     <span class="item item03"></span>
@@ -1015,6 +1208,7 @@
 <!-- inject:js -->
 <!-- page -->
 <script src="assets/scripts/jquery-2.1.3.min.js"></script>
+<script src="assets/scripts/interact.min.js"></script>
 <script src="assets/scripts/data.js"></script>
 <script src="assets/scripts/components.js"></script>
 <script src="assets/scripts/homepage.js"></script>

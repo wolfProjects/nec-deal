@@ -21,6 +21,8 @@ body {
   height: 100%;
   overflow: hidden;
   margin: 0  auto;
+  background: url("../images/home-bg.jpg") no-repeat;
+  background-size: cover;
 }
 
 a {

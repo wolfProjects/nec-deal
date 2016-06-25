@@ -290,7 +290,18 @@ $globalDelay: .2s;
     left: 456px;
 
     .wrap {
+      width: 1150px;
       height: 638px;
+      overflow: hidden;
+    }
+
+    .body {
+      height: 658px;
+      overflow-x: scroll;
+    }
+
+    .item-wrap {
+      width: 2000%;
       overflow: hidden;
     }
 
@@ -526,6 +537,10 @@ $globalDelay: .2s;
 .newQuote-classic {
   transform: scale(.239);
   transform-origin: left top;
+}
+
+.topFloor {
+  z-index: 30;
 }
 
 

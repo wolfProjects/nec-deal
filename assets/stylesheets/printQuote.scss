@@ -19,8 +19,11 @@ $globalDelay: .2s;
 
 //  scene print quote
 .scene-printQuote  {
+  top: 200px;
+  left: 100px;
   background: url("../images/newQuote-bg.jpg") no-repeat!important;
   background-size: cover;
+  transform: scale(.7);
 
   .side {
     top: 170px;

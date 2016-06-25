@@ -245,7 +245,16 @@
   left: 456px;
 }
 .newQuote-insurance .main .wrap {
+  width: 1150px;
   height: 638px;
+  overflow: hidden;
+}
+.newQuote-insurance .main .body {
+  height: 658px;
+  overflow-x: scroll;
+}
+.newQuote-insurance .main .item-wrap {
+  width: 2000%;
   overflow: hidden;
 }
 .newQuote-insurance .main .main-item {
@@ -452,6 +461,10 @@
   -webkit-transform-origin: left top;
       -ms-transform-origin: left top;
           transform-origin: left top;
+}
+
+.topFloor {
+  z-index: 30;
 }
 
 /*======================================================================

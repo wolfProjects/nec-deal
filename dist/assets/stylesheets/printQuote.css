@@ -9,8 +9,13 @@
 }
 
 .scene-printQuote {
+  top: 200px;
+  left: 100px;
   background: url("../images/newQuote-bg.jpg") no-repeat !important;
   background-size: cover;
+  -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+          transform: scale(0.7);
 }
 .scene-printQuote .side {
   top: 170px;
