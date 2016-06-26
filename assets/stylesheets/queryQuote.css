@@ -8,6 +8,48 @@
   left: 0;
 }
 
+.leftIn, .scene-queryQuote .panel {
+  opacity: 0;
+  -webkit-transform: translate3d(-15px, 0, 0);
+          transform: translate3d(-15px, 0, 0);
+}
+
+.leftInActive, .scene-queryQuote.active .panel {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.rightIn {
+  opacity: 0;
+  -webkit-transform: translate3d(15px, 0, 0);
+          transform: translate3d(15px, 0, 0);
+}
+
+.rightInActive {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.downIn {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 15px, 0);
+          transform: translate3d(0, 15px, 0);
+}
+
+.downInActive {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
 .scene-queryQuote {
   background: url("../images/s-carBrowsing-bg.jpg") no-repeat;
   background-size: cover;
@@ -79,19 +121,24 @@
   overflow: hidden;
   float: left;
   width: 795px;
-  height: 440px;
+  height: 420px;
   padding: 98px 0 0 0;
   font-size: 20px;
   color: #657fab;
 }
 .scene-queryQuote .quote-list .main .scroll-wrap {
-  height: 100%;
+  height: 420px;
   padding-bottom: 20px;
+  overflow-y: hidden;
   overflow-x: scroll;
+}
+.scene-queryQuote .quote-list .main .body {
+  overflow: hidden;
 }
 .scene-queryQuote .quote-list .item {
   float: left;
   width: 265px;
+  height: 420px;
   text-align: center;
 }
 .scene-queryQuote .quote-list .item p {

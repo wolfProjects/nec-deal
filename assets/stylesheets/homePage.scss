@@ -18,4 +18,29 @@ $globalDelay: .2s;
 }
 
 //  home page
-.scene-home {}
+.scene-home {
+  .home-logo {
+    top: 470px;
+    left: 440px;
+    z-index: 30;
+    opacity: 0;
+    transform: scale(.95);
+    transform-origin: center center;
+  }
+
+  .home-animation-bg {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.active {
+    .home-logo {
+      opacity: 1;
+      transform: scale(1);
+      transform-origin: center center;
+      transition: all 3.25s 2.8s;
+    }
+  }
+}

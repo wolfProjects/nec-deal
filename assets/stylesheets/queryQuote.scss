@@ -17,6 +17,37 @@ $globalDelay: .2s;
   left: 0;
 }
 
+//  transition preset
+.leftIn {
+  opacity: 0;
+  transform: translate3d(-15px, 0, 0);
+}
+.leftInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
+.rightIn {
+  opacity: 0;
+  transform: translate3d(15px, 0, 0);
+}
+.rightInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
+.downIn {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
+.downInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
 //  scene query quote
 .scene-queryQuote  {
   background: url("../images/s-carBrowsing-bg.jpg") no-repeat;
@@ -25,6 +56,7 @@ $globalDelay: .2s;
   .panel {
     top: 170px;
     left: 74px;
+    @extend .leftIn;
   }
 
   .panel-hd {
@@ -98,21 +130,27 @@ $globalDelay: .2s;
       overflow: hidden;
       float: left;
       width: (265*3)*1px;
-      height: 440px;
+      height: 420px;
       padding: 98px 0 0 0;
       font-size: 20px;
       color: #657fab;
 
       .scroll-wrap {
-        height: 100%;
+        height: 420px;
         padding-bottom: 20px;
+        overflow-y: hidden;
         overflow-x: scroll;
+      }
+
+      .body {
+        overflow: hidden;
       }
     }
 
     .item {
       float: left;
       width: 265px;
+      height: 420px;
       text-align: center;
 
       p {
@@ -153,6 +191,11 @@ $globalDelay: .2s;
     margin-right: 32px;
   }
 
+  &.active {
+    .panel {
+      @extend .leftInActive;
+    }
+  }
 }
 
 /*======================================================================

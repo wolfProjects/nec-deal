@@ -17,6 +17,37 @@ $globalDelay: .2s;
   left: 0;
 }
 
+//  transition preset
+.leftIn {
+  opacity: 0;
+  transform: translate3d(-15px, 0, 0);
+}
+.leftInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
+.rightIn {
+  opacity: 0;
+  transform: translate3d(15px, 0, 0);
+}
+.rightInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
+.downIn {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
+.downInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
 //  scene car browsing
 .scene-carBrowsing  {
   background: url("../images/s-carBrowsing-bg.jpg") no-repeat!important;
@@ -53,6 +84,7 @@ $globalDelay: .2s;
   .panel {
     top: 168px;
     left: 72px;
+    @extend .leftIn;
   }
 
   .panel-hd {
@@ -73,7 +105,7 @@ $globalDelay: .2s;
       margin-left: 96px;
       padding-top: 30px;
 
-      .body {
+      .bd {
         width: 100%;
         height: 470px;
         padding-right: 20px;
@@ -155,6 +187,7 @@ $globalDelay: .2s;
     position: absolute;
     top: 676px;
     left: 1648px;
+    @extend .leftIn;
   }
 
   //  车型选择 tab
@@ -165,6 +198,7 @@ $globalDelay: .2s;
     transition: all 1.2s $globalDelay;
     transform: translate3d(20px, 0, 0);
     z-index: 20;
+    @extend .rightIn;
 
     .item {
       width: 142px;
@@ -202,7 +236,6 @@ $globalDelay: .2s;
         display: block;
         width: 100%;
         height: 100%;
-        background: url("../images/car-model-tab-jiaoche.png") no-repeat center center;
         transition: all .3s;
       }
 
@@ -220,7 +253,6 @@ $globalDelay: .2s;
         }
 
         .icon {
-          background: url("../images/car-model-tab-jiaoche-active.png") no-repeat center center;
         }
       }
     }
@@ -260,10 +292,22 @@ $globalDelay: .2s;
         }
       }
     }
+  }
 
-    &.active {
-      transform: translate3d(0, 0, 0);
-      opacity: 1;
+  &.active {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+
+    .panel {
+      @extend .leftInActive;
+    }
+
+    .car-type-select {
+      @extend .leftInActive;
+    }
+
+    .car-model-tab {
+      @extend .rightInActive;
     }
   }
 }

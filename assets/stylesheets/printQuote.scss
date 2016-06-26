@@ -17,6 +17,37 @@ $globalDelay: .2s;
   left: 0;
 }
 
+//  transition preset
+.leftIn {
+  opacity: 0;
+  transform: translate3d(-15px, 0, 0);
+}
+.leftInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
+.rightIn {
+  opacity: 0;
+  transform: translate3d(15px, 0, 0);
+}
+.rightInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
+.downIn {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
+.downInActive {
+  opacity: 1;
+  transition: opacity 1s $globalDelay, transform 1s $globalDelay;
+  transform: translate3d(0, 0, 0);
+}
+
 //  scene print quote
 .scene-printQuote  {
   top: 200px;
@@ -32,6 +63,7 @@ $globalDelay: .2s;
     line-height: 2.1em;
     color: #6e6e85;
     font-size: 16px;
+    @extend .leftIn;
 
     .title { margin-left: -6px; margin-bottom: 20px; }
 
@@ -40,9 +72,9 @@ $globalDelay: .2s;
       span { margin-left: -16px; }
     }
 
-    .btn {
+    .btn-print {
       top: 600px;
-      left: 135px;
+      left: 85px;
       width: 228px;
       height: 63px;
       background: url("../images/s-printQuote-btn.png") no-repeat 6px 6px;
@@ -52,11 +84,25 @@ $globalDelay: .2s;
         background: url("../images/s-printQuote-btn-active.png") no-repeat;
       }
     }
+
+    .btn-save {
+      top: 600px;
+      left: (105+228)*1px;
+      width: 228px;
+      height: 63px;
+      background: url("../images/s-printQuote-btn02.png") no-repeat 6px 6px;
+      border: none;
+
+      &:active {
+        background: url("../images/s-printQuote-btn02-active.png") no-repeat;
+      }
+    }
   }
 
   .main {
     top: 170px;
     left: 755px;
+    @extend .leftIn;
 
     .title { margin-left: -6px; margin-bottom: 20px; }
 
@@ -113,8 +159,12 @@ $globalDelay: .2s;
         color: #657fab;
       }
     }
+  }
 
-
+  &.active {
+    .side, .main {
+      @extend .leftInActive;
+    }
   }
 }
 

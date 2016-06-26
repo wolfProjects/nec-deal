@@ -121,6 +121,12 @@ var carBrosing = {
 
             requestAnimationFrame(function () {
                 that.timer = setInterval(function () {
+                    if (!that.preloadSprites[curIndex]) curIndex += 1;
+                    if (curIndex > that.preloadSprites.length - 1) {
+                        clearInterval(that.timer);
+                        curIndex = 0;
+                        playMainAnimation();
+                    }
                     ctx.clearRect(0, 0, 1280, 720);
                     ctx.drawImage(that.preloadSprites[curIndex], 0, 0, 1280, 720);
                     curIndex += 1;
@@ -138,6 +144,10 @@ var carBrosing = {
                 that.timer = setInterval(play, 1000/25);
 
                 function play () {
+                    if (!that.mainSprites[curIndex]) curIndex += 1;
+                    if (curIndex > that.mainSprites.length - 1) {
+                        curIndex = 0;
+                    }
                     ctx.clearRect(0, 0, 1280, 720);
                     ctx.drawImage(that.mainSprites[curIndex], 0, 0, 1280, 720);
                     curIndex += 1;
@@ -168,8 +178,12 @@ var carBrosing = {
     },
     
     show: function () {
+        var that = this;
         $('.nav').hide();
-        $('.scene-carBrowsing').show().addClass('active').siblings('.scene').removeClass('active').hide();
+        $('.scene-carBrowsing').show().siblings('.scene').removeClass('active').hide();
+        setTimeout(function () {
+            that.scene.addClass('active');
+        }, 10);
         this.animationBg.play();
     },
 

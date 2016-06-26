@@ -6,8 +6,12 @@ var printQuote = {
     scene: $('.scene-printQuote'),
 
     show: function () {
+        var that = this;
         $('.nav').show();
-        $('.scene-printQuote').show().addClass('active').siblings('.scene').removeClass('active').hide();
+        $('.scene-printQuote').show().siblings('.scene').removeClass('active').hide();
+        setTimeout(function () {
+            that.scene.addClass('active');
+        }, 10);
 
         //  drag scale rotate
         initScale('.scene-printQuote');
@@ -75,6 +79,25 @@ var printQuote = {
         scene.find('.icon-close').click(function () {
             $('.scene-printQuote').hide().removeClass('active');
             app.show();
+        });
+
+        //  保存并打印
+        scene.find('.btn-print').click(function () {
+            //  Ajax 保存当前 新建报价单 内的信息
+            //  省略 Ajax...
+
+            //  在 Ajax success 回调函数内标记 新建报价单 是否初始化 为 false
+            newQuote && (newQuote.isInit = false);
+        });
+
+        //  保存
+        scene.find('.btn-save').click(function () {
+            //  Ajax 保存当前 新建报价单 内的信息
+            //  省略 Ajax...
+
+            //  在 Ajax success 回调函数内标记 新建报价单 是否初始化 为 false
+            alert('保存成功');
+            location.reload();
         });
     }
 };

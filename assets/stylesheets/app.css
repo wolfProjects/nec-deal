@@ -207,8 +207,6 @@ input {
 .scene {
   position: absolute;
   z-index: 10;
-  background: url("../images/home-bg.jpg") no-repeat;
-  background-size: cover;
 }
 
 .scene.active {

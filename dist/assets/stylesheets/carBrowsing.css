@@ -8,6 +8,48 @@
   left: 0;
 }
 
+.leftIn, .scene-carBrowsing .panel, .scene-carBrowsing .car-type-select {
+  opacity: 0;
+  -webkit-transform: translate3d(-15px, 0, 0);
+          transform: translate3d(-15px, 0, 0);
+}
+
+.leftInActive, .scene-carBrowsing.active .panel, .scene-carBrowsing.active .car-type-select {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.rightIn, .scene-carBrowsing .car-model-tab {
+  opacity: 0;
+  -webkit-transform: translate3d(15px, 0, 0);
+          transform: translate3d(15px, 0, 0);
+}
+
+.rightInActive, .scene-carBrowsing.active .car-model-tab {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.downIn {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 15px, 0);
+          transform: translate3d(0, 15px, 0);
+}
+
+.downInActive {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
 .scene-carBrowsing {
   background: url("../images/s-carBrowsing-bg.jpg") no-repeat !important;
   background-size: cover;
@@ -73,7 +115,7 @@
   margin-left: 96px;
   padding-top: 30px;
 }
-.scene-carBrowsing .panel-bd-item .wrap .body {
+.scene-carBrowsing .panel-bd-item .wrap .bd {
   width: 100%;
   height: 470px;
   padding-right: 20px;
@@ -189,7 +231,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: url("../images/car-model-tab-jiaoche.png") no-repeat center center;
   -webkit-transition: all .3s;
           transition: all .3s;
 }
@@ -204,9 +245,6 @@
   opacity: 1;
   -webkit-animation: left 1.2s 0.2s infinite linear forwards;
           animation: left 1.2s 0.2s infinite linear forwards;
-}
-.scene-carBrowsing .car-model-tab .item.active .icon {
-  background: url("../images/car-model-tab-jiaoche-active.png") no-repeat center center;
 }
 .scene-carBrowsing .car-model-tab.car .item .icon {
   background: url("../images/car-model-tab-jiaoche.png") no-repeat center center;
@@ -226,7 +264,7 @@
 .scene-carBrowsing .car-model-tab.suv .item.active .icon {
   background: url("../images/car-model-tab-suv-active.png") no-repeat center center;
 }
-.scene-carBrowsing .car-model-tab.active {
+.scene-carBrowsing.active {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   opacity: 1;

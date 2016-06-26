@@ -18,13 +18,13 @@ var components = {
     },
 
     radio: function () {
-        $('.radio').click(function () {
+        $('body').on('click', '.radio', function () {
             $(this).addClass('active').siblings().removeClass('active');
         });
     },
 
     checkbox: function () {
-        $('.checkbox').click(function () {
+        $('body').on('click', '.checkbox', function () {
             $(this).toggleClass('active');
         });
     },

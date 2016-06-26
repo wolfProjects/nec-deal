@@ -5,6 +5,8 @@
 var newQuote = {
     scene: $('.scene-newQuote'),
 
+    isInit: false,
+
     homePage: {
         carSelect: function (scene) {
             resetCarTypeSelect();
@@ -110,7 +112,12 @@ var newQuote = {
     insurancePage: {
         chooseBtn: function (scene) {
             scene.find('.btn').click(function () {
+                scene.find('.main-item.active').length == 0 ? scene.find('.main-item').eq(0).addClass('active') : '';
                 $(this).addClass('active').siblings().removeClass('active');
+
+                //  当前高亮边框所选 保险产品ID
+                var id = scene.find('.main-item.active').attr('data-value');
+                console.log(id);
             });
         },
 
@@ -118,6 +125,7 @@ var newQuote = {
             scene.find('.item-wrap').css({width: scene.find('.main-item').length*398});
 
             scene.find('.main-item').click(function () {
+                scene.find('.btn').removeClass('active');
                 $(this).addClass('active').siblings().removeClass('active');
             });
         }
@@ -142,7 +150,7 @@ var newQuote = {
         }
     },
 
-    classic: {
+    classicPage: {
         tab: function (scene) {
             scene.find('.car-classic-tab .item').click(function () {
                 $(this).addClass('active').siblings().removeClass('active');
@@ -152,62 +160,68 @@ var newQuote = {
     },
 
     show: function () {
+        var that = this;
+        $('.nav').show();
+        $('.nav').removeClass($('.nav').attr('class').replace('nav','')).addClass('nav03');
         $('.scene-newQuote').show().addClass('active').siblings('.scene').removeClass('active').hide();
 
-        initScale('.newQuote-home');
-        initScale('.newQuote-insurance');
-        initScale('.newQuote-gift');
-        initScale('.newQuote-classic');
+        if (!that.isInit) {
+            that.init(function () {
+                that.initScale('.newQuote-home');
+            });
+        } else {
+            that.initScale('.newQuote-home');
+        }
+    },
 
-        function initScale (dragElement) {
-            var scale = getScale(dragElement);
-            var angle = 0;
+    initScale: function (dragElement) {
+        var scale = getScale(dragElement);
+        var angle = 0;
 
-            interact(dragElement)
-                .ignoreFrom('.select, .btn, .radio, .checkbox, .car-classic-tab, .newQuote-insurance .wrap')
-                .gesturable({
-                    onstart: function (event) {
-                    },
-                    onmove: function (event) {
-                        scale = scale * (1 + event.ds);
-                        angle += event.da*0.65;
+        interact(dragElement)
+            .ignoreFrom('.select, .btn, .radio, .checkbox, .car-classic-tab, .newQuote-insurance .wrap, .newQuote-gift .panel-bd .body, #calculator')
+            .gesturable({
+                onstart: function (event) {
+                },
+                onmove: function (event) {
+                    scale = scale * (1 + event.ds);
+                    angle += event.da;
 
-                        dragMoveListener(event);
-                    },
-                    onend: function (event) {
+                    dragMoveListener(event);
+                },
+                onend: function (event) {
 
-                    }
-                })
-                .draggable({
-                    inertia: {
-                        resistance: 30,
-                        minSpeed: 500,
-                        endSpeed: 200
-                    },
-                    restrict: {
-                        restriction: "parent",
-                        elementRect: { top: 0, left: 0, bottom: 0, right: 0 }
-                    },
-                    onmove: dragMoveListener
-                });
+                }
+            })
+            .draggable({
+                inertia: {
+                    resistance: 30,
+                    minSpeed: 500,
+                    endSpeed: 200
+                },
+                restrict: {
+                    restriction: "parent",
+                    elementRect: { top: 0, left: 0, bottom: 0, right: 0 }
+                },
+                onmove: dragMoveListener
+            });
 
-            function dragMoveListener (event, cb) {
-                var target = event.target,
-                // keep the dragged position in the data-x/data-y attributes
-                    x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-                    y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+        function dragMoveListener (event, cb) {
+            var target = event.target,
+            // keep the dragged position in the data-x/data-y attributes
+                x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+                y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-                // translate the element
-                target.style.webkitTransform =
-                    target.style.transform =
-                        'translate(' + x + 'px, ' + y + 'px)' +
-                        'rotate(' + angle + 'deg)' +
-                        'scale(' + scale + ')';
+            // translate the element
+            target.style.webkitTransform =
+                target.style.transform =
+                    'translate(' + x + 'px, ' + y + 'px)' +
+                    'rotate(' + angle + 'deg)' +
+                    'scale(' + scale + ')';
 
-                // update the posiion attributes
-                target.setAttribute('data-x', x);
-                target.setAttribute('data-y', y);
-            }
+            // update the posiion attributes
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
         }
 
         function getScale (elem) {
@@ -215,43 +229,70 @@ var newQuote = {
         }
     },
 
-    init: function (){
-        var scene = this.scene;
+    init: function (callback){
+        var that = this;
+        var scene = that.scene;
 
-        this.homePage.carSelect(scene.find('.newQuote-home'));
+        if (that.isInit) {
+            if (!confirm('点击确认, 则舍弃当前新建的报价单数据, \n需要保存报价单 请打开保存报价单页面保存')) return;
+        }
 
-        this.insurancePage.chooseBtn(scene.find('.newQuote-insurance'));
-        this.insurancePage.item(scene.find('.newQuote-insurance'));
+        $('.scene-newQuote').empty();
 
-        this.giftPage.table(scene.find('.newQuote-gift'));
+        $.get('views/newQuote.html', function (a, b, c) {
+            var tasks = $(a);
+            Array.prototype.forEach.call(tasks, function (item) {
+                $('.scene-newQuote').append(item);
+            });
+            initTask ();
 
-        this.classic.tab(scene.find('.newQuote-classic'));
-
-        //  close btn
-        scene.find('.newQuote-home').find('.icon-close').click(function () {
-            $('.scene-newQuote').hide().removeClass('active');
-            app.show();
+            //  callback 用来填充数据
+            callback && callback(scene);
         });
 
-        scene.find('.newQuote-home .btn-insurance').click(function () {
-            scene.find('.newQuote-home').hide();
-            scene.find('.newQuote-insurance').show();
-        });
+        function initTask () {
+            that.isInit = true;
+            that.homePage.carSelect(scene.find('.newQuote-home'));
 
-        scene.find('.newQuote-home .btn-classic').click(function () {
-            scene.find('.newQuote-home').hide();
-            scene.find('.newQuote-insurance').show();
-        });
+            that.insurancePage.chooseBtn(scene.find('.newQuote-insurance'));
+            that.insurancePage.item(scene.find('.newQuote-insurance'));
 
-        scene.find('.newQuote-home .btn-gifts').click(function () {
-            scene.find('.newQuote-home').hide();
-            scene.find('.newQuote-gift').show();
-        });
-        
-        scene.find('.newQuote-insurance .icon-close, .newQuote-classic .icon-close, .newQuote-gift .icon-close').click(function () {
-            scene.find('.newQuote-home').show();
-            scene.find('.newQuote-insurance, .newQuote-classic, .newQuote-gift').hide();
-        });
+            that.giftPage.table(scene.find('.newQuote-gift'));
+
+            that.classicPage.tab(scene.find('.newQuote-classic'));
+
+            //  close btn
+            scene.find('.newQuote-home').find('.icon-close').click(function () {
+                $('.scene-newQuote').hide().removeClass('active');
+                app.show();
+            });
+
+            scene.find('.newQuote-home .btn-insurance').click(function () {
+                scene.find('.newQuote-insurance').show();
+                that.initScale('.newQuote-insurance');
+            });
+
+            scene.find('.newQuote-home .btn-classic').click(function () {
+                scene.find('.newQuote-classic').show();
+                that.initScale('.newQuote-classic');
+            });
+
+            scene.find('.newQuote-home .btn-gifts').click(function () {
+                scene.find('.newQuote-gift').show();
+                that.initScale('.newQuote-gift');
+            });
+
+            scene.find('.newQuote-insurance .icon-close, .newQuote-classic .icon-close, .newQuote-gift .icon-close').click(function () {
+                $(this).parents('.newQuote-item').hide();
+            });
+
+            scene.find('.newQuote-item').on('touchstart', function () {
+                $(this).addClass('topFloor').siblings('.newQuote-item').removeClass('topFloor');
+            });
+
+            //  init calculator
+            $('.night_owl').NightOwl();
+        }
     }
 };
 

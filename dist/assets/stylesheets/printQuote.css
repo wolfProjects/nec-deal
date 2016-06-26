@@ -8,6 +8,48 @@
   left: 0;
 }
 
+.leftIn, .scene-printQuote .side, .scene-printQuote .main {
+  opacity: 0;
+  -webkit-transform: translate3d(-15px, 0, 0);
+          transform: translate3d(-15px, 0, 0);
+}
+
+.leftInActive, .scene-printQuote.active .side, .scene-printQuote.active .main {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.rightIn {
+  opacity: 0;
+  -webkit-transform: translate3d(15px, 0, 0);
+          transform: translate3d(15px, 0, 0);
+}
+
+.rightInActive {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.downIn {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 15px, 0);
+          transform: translate3d(0, 15px, 0);
+}
+
+.downInActive {
+  opacity: 1;
+  -webkit-transition: opacity 1s 0.2s, -webkit-transform 1s 0.2s;
+          transition: opacity 1s 0.2s, transform 1s 0.2s;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
 .scene-printQuote {
   top: 200px;
   left: 100px;
@@ -35,16 +77,27 @@
 .scene-printQuote .side p span {
   margin-left: -16px;
 }
-.scene-printQuote .side .btn {
+.scene-printQuote .side .btn-print {
   top: 600px;
-  left: 135px;
+  left: 85px;
   width: 228px;
   height: 63px;
   background: url("../images/s-printQuote-btn.png") no-repeat 6px 6px;
   border: none;
 }
-.scene-printQuote .side .btn:active {
+.scene-printQuote .side .btn-print:active {
   background: url("../images/s-printQuote-btn-active.png") no-repeat;
+}
+.scene-printQuote .side .btn-save {
+  top: 600px;
+  left: 333px;
+  width: 228px;
+  height: 63px;
+  background: url("../images/s-printQuote-btn02.png") no-repeat 6px 6px;
+  border: none;
+}
+.scene-printQuote .side .btn-save:active {
+  background: url("../images/s-printQuote-btn02-active.png") no-repeat;
 }
 .scene-printQuote .main {
   top: 170px;

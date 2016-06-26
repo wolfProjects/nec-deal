@@ -19,7 +19,6 @@ $globalDelay: .2s;
 
 //  scene new quote
 .scene-newQuote  {
-  background: url("../images/s-carBrowsing-bg.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -142,7 +141,7 @@ $globalDelay: .2s;
 //  gift page
 .newQuote-gift {
   position: absolute;
-  top: 138px;
+  top: 682px;
   left: 943px;
   width: 1920px;
   height: 1080px;
@@ -167,7 +166,7 @@ $globalDelay: .2s;
     top: 18px;
     width: 1718px;
     height: 701px;
-    padding-top: 59px;
+    padding-top: 79px;
     padding-left: 58px;
     background: url("../images/newQuote-gift-panel-bg.png") no-repeat;
 
@@ -238,7 +237,7 @@ $globalDelay: .2s;
 //  insurance page
 .newQuote-insurance {
   position: absolute;
-  top: 410px;
+  top: 138px;
   left: 943px;
   width: 1920px;
   height: 1080px;
@@ -366,7 +365,7 @@ $globalDelay: .2s;
 //  classic page
 .newQuote-classic {
   position: absolute;
-  top: 682px;
+  top: 410px;
   left: 943px;
   width: 1920px;
   height: 1080px;
@@ -542,7 +541,6 @@ $globalDelay: .2s;
 .topFloor {
   z-index: 30;
 }
-
 
 /*======================================================================
       Animations

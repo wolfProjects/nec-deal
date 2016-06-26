@@ -7,3 +7,33 @@
   bottom: 0;
   left: 0;
 }
+
+.scene-home .home-logo {
+  top: 470px;
+  left: 440px;
+  z-index: 30;
+  opacity: 0;
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+}
+.scene-home .home-animation-bg {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.scene-home.active .home-logo {
+  opacity: 1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: all 3.25s 2.8s;
+          transition: all 3.25s 2.8s;
+}
