@@ -179,7 +179,7 @@ var newQuote = {
         var angle = 0;
 
         interact(dragElement)
-            .ignoreFrom('.select, .btn, .radio, .checkbox, .car-classic-tab, .newQuote-insurance .wrap, .newQuote-gift .panel-bd .body, #calculator')
+            .ignoreFrom('.select, .btn, .radio, .checkbox, .icon-close, .car-classic-tab, .newQuote-insurance .wrap, .newQuote-gift .panel-bd .body, #calculator')
             .gesturable({
                 onstart: function (event) {
                 },
@@ -268,30 +268,37 @@ var newQuote = {
             });
 
             scene.find('.newQuote-home .btn-insurance').click(function () {
-                scene.find('.newQuote-insurance').show();
+                scene.find('.newQuote-insurance').show().addClass('topFloor').siblings('.newQuote-item').removeClass('topFloor');
                 that.initScale('.newQuote-insurance');
             });
 
             scene.find('.newQuote-home .btn-classic').click(function () {
-                scene.find('.newQuote-classic').show();
+                scene.find('.newQuote-classic').show().addClass('topFloor').siblings('.newQuote-item').removeClass('topFloor');
                 that.initScale('.newQuote-classic');
             });
 
             scene.find('.newQuote-home .btn-gifts').click(function () {
-                scene.find('.newQuote-gift').show();
+                scene.find('.newQuote-gift').show().addClass('topFloor').siblings('.newQuote-item').removeClass('topFloor');
                 that.initScale('.newQuote-gift');
             });
 
-            scene.find('.newQuote-insurance .icon-close, .newQuote-classic .icon-close, .newQuote-gift .icon-close').click(function () {
+            scene.find('.newQuote-insurance .icon-close, .newQuote-classic .icon-close, .newQuote-gift .icon-close').on('click', function () {
                 $(this).parents('.newQuote-item').hide();
             });
 
-            scene.find('.newQuote-item').on('touchstart', function () {
-                $(this).addClass('topFloor').siblings('.newQuote-item').removeClass('topFloor');
+            scene.find('.newQuote-insurance .icon-close, .newQuote-classic .icon-close, .newQuote-gift .icon-close').on('touchstart', function () {
+                $(this).parents('.newQuote-item').hide();
             });
 
+            scene.find('.newQuote-item').on('touchstart', topFloor);
+            scene.find('.newQuote-item').on('mousedown', topFloor);
+
+            function topFloor () {
+                $(this).addClass('topFloor').siblings('.newQuote-item').removeClass('topFloor');
+            }
+
             //  init calculator
-            $('.night_owl').NightOwl();
+            //$('.night_owl').NightOwl();
         }
     }
 };

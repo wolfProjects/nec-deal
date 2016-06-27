@@ -272,8 +272,8 @@
         <p><span class="number">7. </span>收入证明：如借款人为全职职工需提供收入证明原件（金融公司统一格式）及工资卡账户记录；</p>
         <p><span class="number">8. </span>稳定收入证明：如果借款人为私营业主提供营业执照及近4个月税单复印件；</p>
         <p><span class="number">9. </span>借款人工商银行账户。</p>
-        <button class="pa btn-print"></button>
-        <button class="pa btn-save"></button>
+        <button class="pa btn btn-print"></button>
+        <button class="pa btn btn-save"></button>
     </div>
     <div class="pa main">
         <div class="title">
@@ -378,6 +378,10 @@
 <img class="pa logo-common" src="assets/images/s-common-logo.png" alt="" width="89" height="24"/>
 <!-- end Logo -->
 
+<!-- print -->
+<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+<!-- end print -->
+
 <!-- inject:js -->
 <!-- page -->
 <script src="assets/scripts/jquery-2.1.3.min.js"></script>
@@ -391,29 +395,6 @@
 <script src="assets/scripts/newQuote.js"></script>
 <script src="assets/scripts/printQuote.js"></script>
 <script src="assets/scripts/main.js"></script>
-
-<script>
-    $(document).ready(function(){
-        $('.night_owl').NightOwl();
-    });
-</script>
-<script>
-//    $.get('views/task.html', function (a, b, c) {
-//        var taskID = 'view' + (new Date().getTime());
-//        var task = $($(a)[5]);
-//
-//        task.attr('id', taskID);
-//        $('.task-window').append(task);
-//        initTask (task);
-//    });
-//
-//    function initTask (task) {
-//        task.find('h1').click(function () {
-//            console.log($(this).text());
-//        });
-//    }
-</script>
-
 <!-- endinject -->
 </body>
 </html>

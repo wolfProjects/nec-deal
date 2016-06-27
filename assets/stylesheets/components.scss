@@ -236,11 +236,12 @@ $globalDelay: .2s;
 //  close icon
 .icon-close {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  width: 41px;
-  height: 42px;
-  background: url("../images/icon-close-big.png") no-repeat;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  z-index: 2000;
+  background: url("../images/icon-close-big.png") no-repeat center center;
   cursor: pointer;
 }
 

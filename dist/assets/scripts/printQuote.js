@@ -21,7 +21,7 @@ var printQuote = {
             var angle = 0;
 
             interact(dragElement)
-                .ignoreFrom('.select, .btn, .radio, .checkbox, .car-classic-tab, .newQuote-insurance .wrap')
+                .ignoreFrom('.select, .btn, .radio, .checkbox, .icon-close, .car-classic-tab, .newQuote-insurance .wrap')
                 .gesturable({
                     onstart: function (event) {
                     },
@@ -88,6 +88,19 @@ var printQuote = {
 
             //  在 Ajax success 回调函数内标记 新建报价单 是否初始化 为 false
             newQuote && (newQuote.isInit = false);
+
+            var printDivCSS = new String (
+                '<link href="assets/stylesheets/components.css" rel="stylesheet" type="text/css">' +
+                '<link href="assets/stylesheets/printQuote.css" rel="stylesheet" type="text/css">' +
+                '<link href="assets/stylesheets/main.css" rel="stylesheet" type="text/css">'
+            );
+            function printDiv(elem) {
+                window.frames["print_frame"].document.body.innerHTML = printDivCSS + elem.html();
+                window.frames["print_frame"].window.focus();
+                window.frames["print_frame"].window.print();
+            }
+
+            printDiv($('.scene-printQuote .main .body'));
         });
 
         //  保存
